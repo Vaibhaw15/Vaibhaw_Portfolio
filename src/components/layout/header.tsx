@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -7,7 +8,8 @@ const navItems = [
   { href: '#intro', label: 'Intro' },
   { href: '#projects', label: 'Projects' },
   { href: '#testimonials', label: 'Testimonials' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#contact-info', label: 'Contact Info' },
+  { href: '#contact', label: 'Message Me' },
 ];
 
 export default function Header() {
