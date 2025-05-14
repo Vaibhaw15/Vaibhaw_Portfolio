@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -49,67 +50,63 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-secondary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="max-w-2xl mx-auto shadow-xl">
-          <CardHeader className="text-center">
-            <Send className="mx-auto h-12 w-12 text-primary mb-4" />
-            <CardTitle className="text-3xl md:text-4xl text-primary">Get In Touch</CardTitle>
-            <CardDescription className="text-lg text-muted-foreground">
-              Have a question or a project in mind? Let's connect.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg">Full Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="e.g., Jane Doe" {...field} className="text-base" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg">Email Address</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="e.g., jane.doe@example.com" {...field} className="text-base" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg">Your Message</FormLabel>
-                      <FormControl>
-                        <Textarea placeholder="Tell me about your project or inquiry..." {...field} rows={5} className="text-base" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" disabled={isSubmitting} className="w-full text-lg py-6 transition-transform hover:scale-105">
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                  {!isSubmitting && <Send className="ml-2 h-5 w-5" />}
-                </Button>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
+    <Card id="contact" className="w-full shadow-xl rounded-lg">
+      <CardHeader className="text-center">
+        <Send className="mx-auto h-12 w-12 text-primary mb-4" />
+        <CardTitle className="text-3xl md:text-4xl text-primary">Message Me</CardTitle>
+        <CardDescription className="text-lg text-muted-foreground">
+          Have a question or a project in mind? Let's connect.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-lg">Full Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="e.g., Jane Doe" {...field} className="text-base" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-lg">Email Address</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="e.g., jane.doe@example.com" {...field} className="text-base" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-lg">Your Message</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Tell me about your project or inquiry..." {...field} rows={5} className="text-base" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button type="submit" disabled={isSubmitting} className="w-full text-lg py-6 transition-transform hover:scale-105">
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {!isSubmitting && <Send className="ml-2 h-5 w-5" />}
+            </Button>
+          </form>
+        </Form>
+      </CardContent>
+    </Card>
   );
 }

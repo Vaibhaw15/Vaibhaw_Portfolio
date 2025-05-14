@@ -14,13 +14,14 @@ export default function HomePage() {
       <TestimonialsSection />
 
       {/* Combined Contact Row */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <ContactInformationSection />
-          <ContactSection />
+      <section className="bg-background"> {/* Ensure alternating background and default section padding */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <ContactInformationSection />
+            <ContactSection />
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
-
