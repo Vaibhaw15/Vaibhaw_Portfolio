@@ -14,7 +14,7 @@ export default function IntroSection() {
               <div className="relative h-80 md:h-[500px] w-full">
                 <Image
                   src="https://placehold.co/800x1000.png"
-                  alt="Sagar Anghan - Professional Headshot"
+                  alt="Vaibhaw Soni - Professional Headshot"
                   layout="fill"
                   objectFit="cover"
                   data-ai-hint="professional portrait"
@@ -23,7 +23,7 @@ export default function IntroSection() {
               </div>
               <div className="p-6 md:p-10 lg:p-12 flex flex-col justify-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-2">
-                  Hi, I'm Sagar
+                  Hi, I'm Vaibhaw Soni
                 </h1>
                 <p className="text-xl md:text-2xl text-foreground mb-6">
                   A passionate Flutter Developer &amp; Tech Enthusiast
@@ -40,7 +40,7 @@ export default function IntroSection() {
                   </Button>
                   <Button variant="outline" size="lg" asChild className="transition-transform hover:scale-105">
                     {/* Replace with actual resume link */}
-                    <Link href="/sagar-anghan-resume.pdf" target="_blank" download>
+                    <Link href="/vaibhaw-soni-resume.pdf" target="_blank" download>
                       <Download className="mr-2 h-5 w-5" />
                       Download Resume
                     </Link>
