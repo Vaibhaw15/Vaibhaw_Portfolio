@@ -41,10 +41,10 @@ const socialLinks = [
 export default function ContactInformationSection() {
   return (
     <Card id="contact-info" className="w-full shadow-lg rounded-lg">
-      <CardHeader>
-        <CardTitle className="text-2xl md:text-3xl text-primary">Contact Information</CardTitle>
+      <CardHeader className="text-center">
+        <CardTitle className="text-3xl md:text-4xl text-primary">Contact Information</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-6 p-6 pt-4"> {/* Adjusted pt-4 since header provides some top padding */}
+      <CardContent className="space-y-6 p-6 pt-4">
         <ul className="space-y-4">
           {contactDetails.map((item) => (
             <li key={item.label} className="flex items-start">
