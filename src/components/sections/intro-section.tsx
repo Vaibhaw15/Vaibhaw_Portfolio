@@ -13,7 +13,7 @@ export default function IntroSection() {
             <div className="grid md:grid-cols-2 items-center">
               <div className="relative h-80 md:h-[500px] w-full">
                 <Image
-                  src="https://placehold.co/800x1000.png"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAUXAQMAAADQ2L4qAAAAA1BMVEWAgP927Y1LAAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAFZJREFUeJztwQEBAAAAgiD/r25IQAEAAP8cASAAAgAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIBAQCAAwoMBUQAAAABJRU5ErkJggg=="
                   alt="Vaibhaw Soni - Professional Headshot"
                   layout="fill"
                   objectFit="cover"
