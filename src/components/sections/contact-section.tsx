@@ -2,11 +2,12 @@
 "use client";
 
 import { useState } from 'react';
-import { useForm, type SubmitHandler } from 'react-hook-form';
+import type { SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -52,11 +53,7 @@ export default function ContactSection() {
   return (
     <Card id="contact" className="w-full shadow-xl rounded-lg">
       <CardHeader className="text-center">
-        <Send className="mx-auto h-12 w-12 text-primary mb-4" />
         <CardTitle className="text-3xl md:text-4xl text-primary">Message Me</CardTitle>
-        <CardDescription className="text-lg text-muted-foreground">
-          Have a question or a project in mind? Let's connect.
-        </CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
