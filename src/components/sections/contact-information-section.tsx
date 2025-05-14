@@ -1,5 +1,5 @@
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
@@ -41,13 +41,7 @@ const socialLinks = [
 export default function ContactInformationSection() {
   return (
     <Card id="contact-info" className="w-full shadow-lg rounded-lg">
-      <CardHeader className="text-center">
-        <CardTitle className="text-3xl md:text-4xl text-primary">Get In Touch</CardTitle>
-        <CardDescription className="text-lg text-muted-foreground">
-          Here are the ways you can reach out to me.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-6 p-6"> {/* Added p-6 for consistent padding */}
         <ul className="space-y-4">
           {contactDetails.map((item) => (
             <li key={item.label} className="flex items-start">

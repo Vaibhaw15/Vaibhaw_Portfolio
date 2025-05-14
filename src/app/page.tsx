@@ -16,6 +16,12 @@ export default function HomePage() {
       {/* Combined Contact Row */}
       <section className="bg-background"> {/* Ensure alternating background and default section padding */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <ContactInformationSection />
             <ContactSection />
