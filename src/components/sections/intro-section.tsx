@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -13,7 +14,7 @@ export default function IntroSection() {
             <div className="grid md:grid-cols-2 items-center">
               <div className="relative h-80 md:h-[500px] w-full">
                 <Image
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAUXAQMAAADQ2L4qAAAAA1BMVEWAgP927Y1LAAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAFZJREFUeJztwQEBAAAAgiD/r25IQAEAAP8cASAAAgAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIAAIBAQCAAwoMBUQAAAABJRU5ErkJggg=="
+                  src="https://placehold.co/400x500.png"
                   alt="Vaibhaw Soni - Professional Headshot"
                   layout="fill"
                   objectFit="cover"
@@ -26,7 +27,7 @@ export default function IntroSection() {
                   Hi, I'm Vaibhaw Soni
                 </h1>
                 <p className="text-xl md:text-2xl text-foreground mb-6">
-                  A passionate Flutter Developer &amp; Tech Enthusiast
+                  A passionate Flutter Developer & Tech Enthusiast
                 </p>
                 <p className="text-muted-foreground mb-8 text-base md:text-lg leading-relaxed">
                   I specialize in crafting beautiful and high-performing mobile applications with Flutter. With a keen eye for detail and a drive for innovation, I transform ideas into seamless digital experiences. Let's build something amazing together!
@@ -39,8 +40,7 @@ export default function IntroSection() {
                     </Link>
                   </Button>
                   <Button variant="outline" size="lg" asChild className="transition-transform hover:scale-105">
-                    {/* Replace with actual resume link */}
-                    <Link href="/vaibhaw-soni-resume.pdf" target="_blank" download>
+                    <Link href="https://drive.google.com/file/d/15kVTMC_tzbz_RG-rC7gQ3LBcIbv9iIei/view?usp=sharing" target="_blank" download>
                       <Download className="mr-2 h-5 w-5" />
                       Download Resume
                     </Link>
