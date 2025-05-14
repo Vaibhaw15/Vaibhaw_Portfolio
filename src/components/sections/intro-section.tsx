@@ -7,45 +7,50 @@ import { Button } from '@/components/ui/button';
 import { Download, Briefcase } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+const phrases = ["Flutter Expert", "Flutter Developer", "Cross-Platform Expert"];
+
 export default function IntroSection() {
-  const expertiseText = "Flutter expert";
+  const [phraseIndex, setPhraseIndex] = useState(0);
   const [animatedExpertise, setAnimatedExpertise] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Character index for current phrase
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(200); // Controls the speed/delay of the next step
+  const [loopDelay, setLoopDelay] = useState(150); // Initial delay, will be updated by animation logic
   const [showCursor, setShowCursor] = useState(true);
 
-  const TYPING_SPEED = 200;
-  const DELETING_SPEED = 100;
-  const PAUSE_DURATION_AFTER_TYPING = 2000; // Pause after full text is typed
-  const PAUSE_DURATION_AFTER_DELETING = 500; // Pause before restarting
+  const TYPING_SPEED = 150;
+  const DELETING_SPEED = 75;
+  const PAUSE_DURATION_AFTER_TYPING = 2000;
+  const PAUSE_DURATION_AFTER_DELETING = 500;
 
   useEffect(() => {
+    const currentPhrase = phrases[phraseIndex];
+
     const handleTypingLoop = () => {
       if (!isDeleting) { // Typing forward
-        if (currentIndex < expertiseText.length) {
-          setAnimatedExpertise((prev) => prev + expertiseText.charAt(currentIndex));
+        if (currentIndex < currentPhrase.length) {
+          setAnimatedExpertise((prev) => prev + currentPhrase.charAt(currentIndex));
           setCurrentIndex((prev) => prev + 1);
           setLoopDelay(TYPING_SPEED);
-        } else { // Finished typing
-          setLoopDelay(PAUSE_DURATION_AFTER_TYPING); // Pause
-          setIsDeleting(true); // Then start deleting
+        } else { // Finished typing current phrase
+          setLoopDelay(PAUSE_DURATION_AFTER_TYPING);
+          setIsDeleting(true);
         }
       } else { // Deleting
         if (animatedExpertise.length > 0) {
           setAnimatedExpertise((prev) => prev.substring(0, prev.length - 1));
           setLoopDelay(DELETING_SPEED);
-        } else { // Finished deleting
+        } else { // Finished deleting current phrase
           setIsDeleting(false);
           setCurrentIndex(0);
-          setLoopDelay(PAUSE_DURATION_AFTER_DELETING); // Pause before restart
+          setPhraseIndex((prev) => (prev + 1) % phrases.length); // Move to next phrase
+          setLoopDelay(PAUSE_DURATION_AFTER_DELETING);
         }
       }
     };
 
     const timeoutId = setTimeout(handleTypingLoop, loopDelay);
     return () => clearTimeout(timeoutId);
-  }, [animatedExpertise, currentIndex, isDeleting, expertiseText, loopDelay]);
+  }, [animatedExpertise, currentIndex, isDeleting, phraseIndex, loopDelay, phrases]);
 
   // Cursor blinking effect
   useEffect(() => {
