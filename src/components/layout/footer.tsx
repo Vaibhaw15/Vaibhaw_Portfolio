@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,7 +15,7 @@ export default function Footer() {
     <footer className="border-t border-border/40 bg-background">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
         <p className="text-sm text-muted-foreground">
-          &copy; {currentYear} Sagar Anghan. All rights reserved.
+          &copy; {currentYear} Vaibhaw Soni. All rights reserved.
         </p>
         <div className="flex items-center space-x-2">
           {socialLinks.map((social) => (
