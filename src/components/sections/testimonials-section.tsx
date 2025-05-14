@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import type { Testimonial } from '@/lib/types';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -44,7 +45,7 @@ export default function TestimonialsSection() {
               <CardHeader className="pb-4">
                 <div className="flex items-center space-x-4">
                   <Avatar className="h-16 w-16 border-2 border-primary">
-                    {testimonial.authorImageUrl &amp;&amp; (
+                    {testimonial.authorImageUrl && (
                        <AvatarImage src={testimonial.authorImageUrl} alt={testimonial.authorName} data-ai-hint={testimonial.authorImageHint} />
                     )}
                     <AvatarFallback className="bg-primary text-primary-foreground">
@@ -74,3 +75,4 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+
