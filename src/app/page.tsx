@@ -12,8 +12,15 @@ export default function HomePage() {
       <IntroSection />
       <ProjectsSection />
       <TestimonialsSection />
-      <ContactInformationSection />
-      <ContactSection />
+
+      {/* Combined Contact Row */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <ContactInformationSection />
+          <ContactSection />
+        </div>
+      </div>
     </>
   );
 }
+
