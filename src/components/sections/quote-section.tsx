@@ -6,7 +6,7 @@ export default function QuoteSection() {
   return (
     <section id="personal-philosophy" className="py-6 md:py-8 lg:py-10 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="max-w-4xl mx-auto shadow-lg rounded-lg">
+        <Card className="max-w-5xl mx-auto shadow-lg rounded-lg">
           <CardContent className="p-6 md:p-8 relative">
             <QuoteIcon
               className="absolute top-4 left-4 md:top-6 md:left-6 h-12 w-12 md:h-16 md:w-16 text-primary opacity-20"
