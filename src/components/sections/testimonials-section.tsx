@@ -34,7 +34,7 @@ const testimonialsData: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="bg-secondary">
+    <section id="testimonials" className="bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
           Words From Colleagues
@@ -75,4 +75,3 @@ export default function TestimonialsSection() {
     </section>
   );
 }
-
