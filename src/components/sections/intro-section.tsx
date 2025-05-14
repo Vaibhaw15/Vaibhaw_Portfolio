@@ -31,7 +31,7 @@ export default function IntroSection() {
                   A passionate Flutter Developer & Tech Enthusiast
                 </p>
                 <p className="text-muted-foreground mb-8 text-base md:text-lg leading-relaxed">
-                  I specialize in crafting beautiful and high-performing mobile applications with Flutter. With a keen eye for detail and a drive for innovation, I transform ideas into seamless digital experiences. Let's build something amazing together!
+                  Passionate Flutter Developer with strong experience in building responsive, scalable, and real-time mobile applications. Skilled in Dart, Flutter, Firebase, REST APIs, and advanced state management solutions like BLoC, Riverpod, GetX, and MobX. Proficient in implementing animations (implicit & explicit), API integrations, real-time features (WebRTC), and testing (unit/BLoC testing)
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="transition-transform hover:scale-105">
