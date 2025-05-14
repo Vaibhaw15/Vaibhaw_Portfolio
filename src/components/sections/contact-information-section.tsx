@@ -27,12 +27,12 @@ const contactDetails = [
 
 const socialLinks = [
   {
-    href: 'https://github.com/sagaranghan', // Assuming this is Vaibhaw's GitHub, update if different
+    href: 'https://github.com/Vaibhaw15', 
     icon: Github,
     label: 'GitHub',
   },
   {
-    href: 'https://linkedin.com/in/sagaranghan', // Assuming this is Vaibhaw's LinkedIn, update if different
+    href: 'https://www.linkedin.com/in/vaibhawsoni15/', 
     icon: Linkedin,
     label: 'LinkedIn',
   },
@@ -81,3 +81,4 @@ export default function ContactInformationSection() {
     </Card>
   );
 }
+
