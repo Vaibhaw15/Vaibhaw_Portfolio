@@ -50,7 +50,7 @@ export default function IntroSection() {
 
     const timeoutId = setTimeout(handleTypingLoop, loopDelay);
     return () => clearTimeout(timeoutId);
-  }, [animatedExpertise, currentIndex, isDeleting, phraseIndex, loopDelay]); // Removed phrases from deps as it's constant
+  }, [animatedExpertise, currentIndex, isDeleting, phraseIndex, loopDelay]);
 
   // Cursor blinking effect
   useEffect(() => {
@@ -76,8 +76,9 @@ export default function IntroSection() {
           />
         </div>
         <div className="p-6 md:p-10 lg:p-12 flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-1">
-            Hi, I'm Vaibhaw Soni
+          <h1 className="font-bold text-primary mb-1">
+            <span className="block text-2xl md:text-3xl lg:text-4xl">Hi, I'm</span>
+            <span className="block text-4xl md:text-5xl lg:text-6xl">Vaibhaw Soni</span>
           </h1>
           <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-accent mb-6 min-h-[1.5em]">
             {animatedExpertise}
