@@ -1,5 +1,6 @@
 
 import IntroSection from '@/components/sections/intro-section';
+import QuoteSection from '@/components/sections/quote-section';
 import ProjectsSection from '@/components/sections/projects-section';
 import TestimonialsSection from '@/components/sections/testimonials-section';
 import ContactInformationSection from '@/components/sections/contact-information-section';
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <>
       <IntroSection />
+      <QuoteSection />
       <ProjectsSection />
       <TestimonialsSection />
 
