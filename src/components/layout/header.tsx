@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Rocket } from 'lucide-react';
 
 const navItems = [
-  { href: '#intro', label: 'Intro' },
+  { href: '/', label: 'Home' },
   { href: '#projects', label: 'Projects' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact-info', label: 'Contact Info' },
