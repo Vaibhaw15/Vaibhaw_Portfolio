@@ -4,7 +4,7 @@ import { Quote as QuoteIcon } from 'lucide-react'; // Renamed to avoid conflict 
 
 export default function QuoteSection() {
   return (
-    <section id="personal-philosophy" className="py-12 md:py-16 lg:py-20 bg-background">
+    <section id="personal-philosophy" className="py-12 md:py-16 lg:py-20 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="max-w-3xl mx-auto shadow-lg rounded-lg">
           <CardContent className="p-8 md:p-10 lg:p-12 relative">
