@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sagar's Space - Portfolio",
+  title: "Vaibhaw's Space - Portfolio",
   description: "The personal portfolio of Sagar, showcasing projects, skills, and testimonials.",
   icons: {
     icon: '/favicon.ico', // Assuming you might add a favicon later

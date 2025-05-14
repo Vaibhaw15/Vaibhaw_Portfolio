@@ -17,7 +17,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
           <Rocket className="h-7 w-7 text-primary" />
-          <span className="text-xl font-bold text-foreground">Sagar's Space</span>
+          <span className="text-xl font-bold text-foreground">Vaibhaw's Space</span>
         </Link>
         
         <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
