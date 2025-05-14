@@ -8,19 +8,19 @@ const contactDetails = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'vaibhaw.soni@example.com',
-    href: 'mailto:vaibhaw.soni@example.com',
+    value: 'vaibhawsoni900@gmail.com',
+    href: 'mailto:vaibhawsoni900@gmail.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
+    value: '+91 84346 00175',
+    href: 'tel:+918434600175',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'Your City, Your Country',
+    value: 'Kolkata, India',
     href: '#', // No direct link for location usually, or could be a map link
   },
 ];
