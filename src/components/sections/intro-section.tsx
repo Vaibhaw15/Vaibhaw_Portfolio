@@ -96,7 +96,7 @@ export default function IntroSection() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="transition-transform hover:scale-105">
-              <Link href="https://drive.google.com/file/d/15kVTMC_tzbz_RG-rC7gQ3LBcIbv9iIei/view?usp=sharing" target="_blank" download>
+              <Link href="https://drive.google.com/file/d/1V8ImmLIFuOcaRld1ukWcNVFt6TO0Ieyi/view" target="_blank" download>
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </Link>
