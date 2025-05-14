@@ -1,14 +1,13 @@
 import Link from 'next/link';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { href: "https://github.com/sagaranghan", icon: Github, label: "GitHub" },
-    { href: "https://linkedin.com/in/sagaranghan", icon: Linkedin, label: "LinkedIn" },
-    { href: "https://x.com/sagaranghan", icon: Twitter, label: "Twitter/X" },
+    { href: "https://github.com/Vaibhaw15", icon: Github, label: "GitHub" },
+    { href: "https://www.linkedin.com/in/vaibhawsoni15/", icon: Linkedin, label: "LinkedIn" },
   ];
 
   return (
