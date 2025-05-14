@@ -2,15 +2,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-// Card and CardContent are no longer used
 import { Download, Briefcase } from 'lucide-react';
 
 export default function IntroSection() {
   return (
     <section id="intro" className="bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Card and CardContent components removed. Styles like shadow and rounded corners moved to this div */}
-        <div className="grid md:grid-cols-2 items-center overflow-hidden shadow-xl rounded-lg">
+        {/* Styles like rounded corners moved to this div */}
+        <div className="grid md:grid-cols-2 items-center overflow-hidden rounded-lg">
           <div className="relative h-80 md:h-[500px] w-full">
             <Image
               src="/vaibhaw-profile.jpg"
