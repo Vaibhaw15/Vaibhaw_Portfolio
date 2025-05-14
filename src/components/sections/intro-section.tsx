@@ -16,8 +16,9 @@ export default function IntroSection() {
                 <Image
                   src="https://placehold.co/400x500.png"
                   alt="Vaibhaw Soni - Professional Headshot"
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   data-ai-hint="professional portrait"
                   className="grayscale hover:grayscale-0 transition-all duration-500"
                 />
