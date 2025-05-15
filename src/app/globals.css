@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -114,5 +115,18 @@ body {
   }
   section {
     @apply w-full py-12 md:py-16 lg:py-20;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 60s linear infinite; /* Adjust duration for speed */
+  }
+  .hover\\:animate-marquee-paused:hover { /* Tailwind JIT needs escaped characters for hover variants */
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); } /* Scrolls one full set of duplicated items */
   }
 }

@@ -7,22 +7,22 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 const workExperienceData: WorkExperienceItem[] = [
   {
     id: '1',
-    title: 'Senior Flutter Developer',
-    company: 'Stackapp Infotech',
-    dateRange: 'Oct 2022 - Present',
-    descriptionPoints: [
-      'Led a team of 5 developers in building and maintaining a SaaS-based Flutter application with 50,000+ users.',
-      'Architected and implemented scalable mobile applications using Flutter, Dart, and Firebase.',
-      'Reduced app load time by 40% through code optimization, caching strategies, and state management improvements.',
-      'Developed and deployed Android and iOS applications with a strong focus on UI/UX, responsiveness, and performance.',
-      'Integrated REST APIs, Firebase, payment gateways, and social media authentication.',
-      'Implemented CI/CD pipelines with GitHub Actions, reducing deployment time by 60%.',
-      'Worked with Google Maps API, push notifications, deep linking, and multi-device compatibility.',
-      'Collaborated in an agile development environment to ensure timely project delivery.',
-      'Provided technical mentorship, conducted code reviews, and ensured adherence to best practices.',
-      'Hands-on experience with Spring Boot integration, enabling seamless backend communication in Flutter applications.',
-    ],
-    skills: ['Flutter', 'Dart', 'Java', 'Kotlin', 'Swift', 'Objective-C', 'Firebase', 'Rest APIs', 'Spring Boot', 'Material Theme', 'MVP', 'Bloc/Cubit', 'GetX', 'Riverpod', 'Provider', 'WebRTC', 'Social Auth', 'Video/Audio Call', 'Push Notifications', 'Payment Gateway'],
+    title: 'Flutter Developer',
+    company: '1Channel (Channelplay Saas Private Limited)',
+    dateRange: 'May 2022 - Present',
+"descriptionPoints": [
+  "Contributed to the development and maintenance of a CRM And Loyality based Flutter application with 50,000+ users.",
+  "Built scalable and maintainable mobile applications using Flutter, Dart, and Firebase.",
+  "Optimized app performance, reducing load time by up to 40% through effective use of caching and efficient state management.",
+  "Developed cross-platform Android and iOS applications with a focus on clean UI, responsiveness, and smooth UX.",
+  "Integrated REST APIs, Firebase services, payment gateways, and social login features for seamless user experience.",
+  "Set up CI/CD workflows using GitHub Actions, streamlining build and deployment processes.",
+  "Worked with Google Maps API, push notifications, deep linking, and ensured compatibility across devices.",
+  "Actively participated in Agile sprints, collaborating with cross-functional teams to meet project deadlines.",
+  "Engaged in code reviews, followed best practices, and contributed to technical documentation.",
+  "Integrated Spring Boot backend with Flutter frontend for real-time and secure data communication."
+],
+    skills: ['Flutter', 'Dart', 'Java', 'Kotlin', 'Swift', 'Firebase', 'Rest APIs', 'Material Theme', 'MVP', 'Bloc/Cubit', 'GetX', 'Riverpod', 'Provider', 'WebRTC', 'Social Auth', 'Video/Audio Call', 'Push Notifications', 'Payment Gateway'],
   },
   // Add more work experience items here
 ];
@@ -30,23 +30,23 @@ const workExperienceData: WorkExperienceItem[] = [
 const educationData: EducationItem[] = [
   {
     id: '1',
-    degree: 'Bachelor of Computer Applications (B.C.A)',
-    institution: 'Salesian College of Computer Application & Science',
-    year: '2021',
-    description: 'Graduated with strong academic performance, focusing on programming, database management, web technologies, and software development. Gained hands-on experience in building scalable applications and problem-solving using industry-standard tools.',
+    degree: 'Bachelor of Electronics And Communication (ECE)',
+    institution: 'Heritage Institute of Technology, Kolkata',
+    year: '2022',
+    description: 'Graduated with strong academic performance, focusing on programming, digital electronics, embedded systems, database management, and software development. Gained practical experience in building scalable applications and solving technical problems using industry-standard tools.',
   },
   {
-    id: '2',
-    degree: 'Higher Secondary Certificate (HSC)',
-    institution: 'Ashadeep Vidhyalay 3',
-    year: '2017',
-    description: 'Completed 12th grade with a specialization in core subjects that enhanced analytical and logical thinking. Developed a strong foundation in mathematics, computer science, and communication skills, preparing for higher education in technology.',
+    "id": "2",
+    "degree": "Diploma in Electronics and Communication Engineering (ECE)",
+    "institution": "Al-Kabir Polytechnic",
+    "year": "2019",
+    "description": "Completed a comprehensive 3-year diploma program with a focus on electronics, communication systems, and basic computer programming. Gained strong foundational knowledge in circuit design, digital electronics, and communication principles, preparing for further studies in engineering and technology."
   },
   {
     id: '3',
     degree: 'Secondary School Certificate (SSC)',
-    institution: 'Ashadeep Vidhyalay 3',
-    year: '2015',
+    institution: "Saraswati Shishu Vidya Mandir",
+    year: '2016',
     description: 'Completed 10th grade with distinction, excelling in subjects that built a strong academic foundation. Developed problem-solving skills and adaptability, paving the way for future studies in computer science.',
   },
   // Add more education items here
