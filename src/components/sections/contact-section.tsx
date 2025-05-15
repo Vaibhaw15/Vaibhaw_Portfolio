@@ -5,13 +5,16 @@ import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { useState } from 'react'; // Added for isSubmitting state
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Download } from 'lucide-react'; // Changed from SendHorizonal to Download
+import { SendHorizonal } from 'lucide-react'; // Changed icon
+import { db } from '@/firebase/config'; // Import Firestore instance
+import { collection, addDoc } from 'firebase/firestore';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -23,6 +26,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactSection() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -33,51 +37,32 @@ export default function ContactSection() {
     },
   });
 
-  const onSubmit: SubmitHandler<ContactFormValues> = (data) => {
-    // Prepare CSV content
-    // Escape commas and newlines in data to prevent CSV corruption
-    const escapeCsvCell = (cellData: string) => {
-      let escaped = cellData.replace(/"/g, '""'); // Escape double quotes
-      if (escaped.includes(',') || escaped.includes('\\n') || escaped.includes('"')) {
-        escaped = `"${escaped}"`; // Enclose in double quotes if it contains comma, newline, or quote
-      }
-      return escaped;
-    };
+  const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
+    setIsSubmitting(true);
+    try {
+      // Add a new document with a generated ID to the "inquiries" collection
+      await addDoc(collection(db, "inquiries"), {
+        name: data.name,
+        email: data.email,
+        message: data.message,
+        submittedAt: new Date(), // Optional: add a timestamp
+      });
 
-    const headers = ['Full Name', 'Email Address', 'Message'];
-    const rows = [
-      [
-        escapeCsvCell(data.name),
-        escapeCsvCell(data.email),
-        escapeCsvCell(data.message)
-      ]
-    ];
-
-    let csvContent = headers.join(",") + "\\n"
-      + rows.map(e => e.join(",")).join("\\n");
-
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    
-    if (typeof window !== "undefined") {
-      const link = document.createElement("a");
-      if (link.download !== undefined) { // feature detection
-        const url = URL.createObjectURL(blob);
-        link.setAttribute("href", url);
-        link.setAttribute("download", "contact_inquiry.csv");
-        link.style.visibility = 'hidden';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-      }
+      toast({
+        title: 'Message Sent!',
+        description: "Thank you for your inquiry. We'll be in touch soon.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      toast({
+        title: 'Error Sending Message',
+        description: "There was an issue sending your message. Please try again later.",
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-
-    toast({
-      title: 'Inquiry Data Downloaded',
-      description: "The contact details have been downloaded as contact_inquiry.csv.",
-    });
-    
-    form.reset();
   };
 
   return (
@@ -127,9 +112,9 @@ export default function ContactSection() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full text-lg py-6 transition-transform hover:scale-105">
-              Download Inquiry Data
-              <Download className="ml-2 h-5 w-5" />
+            <Button type="submit" disabled={isSubmitting} className="w-full text-lg py-6 transition-transform hover:scale-105">
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+              <SendHorizonal className="ml-2 h-5 w-5" />
             </Button>
           </form>
         </Form>
