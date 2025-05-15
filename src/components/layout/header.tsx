@@ -7,6 +7,7 @@ import { Menu, Rocket } from 'lucide-react';
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact-info', label: 'Contact Info' },
   { href: '#contact', label: 'Message Me' },

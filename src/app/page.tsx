@@ -2,6 +2,7 @@
 import IntroSection from '@/components/sections/intro-section';
 import QuoteSection from '@/components/sections/quote-section';
 import ProjectsSection from '@/components/sections/projects-section';
+import ExperienceEducationSection from '@/components/sections/experience-education-section';
 import TestimonialsSection from '@/components/sections/testimonials-section';
 import ContactInformationSection from '@/components/sections/contact-information-section';
 import ContactSection from '@/components/sections/contact-section';
@@ -13,6 +14,7 @@ export default function HomePage() {
       <IntroSection />
       <QuoteSection />
       <ProjectsSection />
+      <ExperienceEducationSection />
       <TestimonialsSection />
 
       {/* Combined Contact Row */}

@@ -1,3 +1,4 @@
+
 export interface Project {
   id: string;
   title: string;
@@ -16,4 +17,21 @@ export interface Testimonial {
   authorTitle: string;
   authorImageUrl?: string;
   authorImageHint?: string;
+}
+
+export interface WorkExperienceItem {
+  id: string;
+  title: string;
+  company: string;
+  dateRange: string;
+  descriptionPoints: string[];
+  skills: string[];
+}
+
+export interface EducationItem {
+  id: string;
+  degree: string;
+  institution: string;
+  year: string;
+  description: string;
 }
