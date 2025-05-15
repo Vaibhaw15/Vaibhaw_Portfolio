@@ -64,7 +64,7 @@ export default function IntroSection() {
       <div className="container mx-auto grid md:grid-cols-2 items-center overflow-hidden rounded-lg px-4 sm:px-6 lg:px-8">
         <div className="relative h-80 md:h-[500px] w-full">
           <Image
-            src="https://placehold.co/600x400.png" // Changed to placeholder for diagnostics
+            src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
             fill
             style={{ objectFit: 'cover' }}
