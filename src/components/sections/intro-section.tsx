@@ -13,7 +13,7 @@ export default function IntroSection() {
   const [animatedExpertise, setAnimatedExpertise] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150); 
+  const [loopDelay, setLoopDelay] = useState(150);
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -67,7 +67,7 @@ export default function IntroSection() {
             src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
             style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
-            className="grayscale hover:grayscale-0 transition-all duration-500"
+            className="grayscale hover:grayscale-0 transition-all duration-500 rounded-full"
           />
         </div>
         <div className="p-6 md:p-10 lg:p-12 flex flex-col justify-center">
