@@ -1,7 +1,6 @@
 
 "use client";
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Download, Briefcase } from 'lucide-react';
@@ -14,7 +13,7 @@ export default function IntroSection() {
   const [animatedExpertise, setAnimatedExpertise] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150);
+  const [loopDelay, setLoopDelay] = useState(150); 
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -63,14 +62,11 @@ export default function IntroSection() {
     <section id="intro" className="bg-secondary">
       <div className="container mx-auto grid md:grid-cols-2 items-center overflow-hidden rounded-lg px-4 sm:px-6 lg:px-8">
         <div className="relative h-80 md:h-[500px] w-full">
-          <Image
+          {/* Standard img tag for debugging */}
+          <img
             src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
-            fill
-            style={{ objectFit: 'cover' }}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            priority
-            data-ai-hint="professional portrait"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
             className="grayscale hover:grayscale-0 transition-all duration-500"
           />
         </div>
