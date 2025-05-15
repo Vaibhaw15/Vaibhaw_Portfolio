@@ -12,9 +12,9 @@ const phrases = ["Flutter Expert", "Flutter Developer", "Cross-Platform Expert"]
 export default function IntroSection() {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [animatedExpertise, setAnimatedExpertise] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0); // Character index for current phrase
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150); // Initial delay, will be updated by animation logic
+  const [loopDelay, setLoopDelay] = useState(150);
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -26,23 +26,23 @@ export default function IntroSection() {
     const currentPhrase = phrases[phraseIndex];
 
     const handleTypingLoop = () => {
-      if (!isDeleting) { // Typing forward
+      if (!isDeleting) {
         if (currentIndex < currentPhrase.length) {
           setAnimatedExpertise((prev) => prev + currentPhrase.charAt(currentIndex));
           setCurrentIndex((prev) => prev + 1);
           setLoopDelay(TYPING_SPEED);
-        } else { // Finished typing current phrase
+        } else {
           setLoopDelay(PAUSE_DURATION_AFTER_TYPING);
           setIsDeleting(true);
         }
-      } else { // Deleting
+      } else {
         if (animatedExpertise.length > 0) {
           setAnimatedExpertise((prev) => prev.substring(0, prev.length - 1));
           setLoopDelay(DELETING_SPEED);
-        } else { // Finished deleting current phrase
+        } else {
           setIsDeleting(false);
           setCurrentIndex(0);
-          setPhraseIndex((prev) => (prev + 1) % phrases.length); // Move to next phrase
+          setPhraseIndex((prev) => (prev + 1) % phrases.length);
           setLoopDelay(PAUSE_DURATION_AFTER_DELETING);
         }
       }
@@ -52,11 +52,10 @@ export default function IntroSection() {
     return () => clearTimeout(timeoutId);
   }, [animatedExpertise, currentIndex, isDeleting, phraseIndex, loopDelay]);
 
-  // Cursor blinking effect
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 530); // Standard blink rate
+    }, 530);
     return () => clearInterval(cursorInterval);
   }, []);
 
@@ -65,7 +64,7 @@ export default function IntroSection() {
       <div className="container mx-auto grid md:grid-cols-2 items-center overflow-hidden rounded-lg px-4 sm:px-6 lg:px-8">
         <div className="relative h-80 md:h-[500px] w-full">
           <Image
-            src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
+            src="https://placehold.co/600x400.png" // Changed to placeholder for diagnostics
             alt="Vaibhaw Soni - Professional Headshot"
             fill
             style={{ objectFit: 'cover' }}
