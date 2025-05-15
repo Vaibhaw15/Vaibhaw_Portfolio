@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -64,7 +63,7 @@ export default function IntroSection() {
 
 
   return (
-    <section id="intro" className="bg-secondary">
+    <section id="intro" className="bg-secondary pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-16 lg:pb-20">
       <div className="container mx-auto grid md:grid-cols-2 items-center overflow-hidden rounded-lg px-4 sm:px-6 lg:px-8">
         {/* Image container - made square, centered, rounded, and hides overflow */}
         <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto my-8 md:my-0 rounded-full overflow-hidden">
@@ -73,6 +72,7 @@ export default function IntroSection() {
             alt="Vaibhaw Soni - Professional Headshot"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             className="grayscale hover:grayscale-0 transition-all duration-500"
+            data-ai-hint="professional portrait"
           />
         </div>
         <div className="p-6 md:p-10 lg:p-12 flex flex-col justify-center">
