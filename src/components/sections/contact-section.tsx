@@ -1,7 +1,6 @@
 
 "use client";
 
-import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -24,7 +23,6 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactSection() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -35,19 +33,31 @@ export default function ContactSection() {
     },
   });
 
-  // NOTE: This is a mock submission. In a real app, you'd send this to a backend.
-  const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
-    setIsSubmitting(true);
-    console.log('Contact form submitted:', data);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+  const onSubmit: SubmitHandler<ContactFormValues> = (data) => {
+    const recipientEmail = 'vaibhawsoni900@gmail.com';
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${data.name}`);
+    const body = encodeURIComponent(
+      `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+    );
+
+    const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
     
-    toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
+    try {
+      window.location.href = mailtoLink;
+      toast({
+        title: 'Opening Email Client!',
+        description: "Your message is ready to be sent. Please confirm in your email application.",
+      });
+    } catch (error) {
+      console.error("Failed to open mailto link:", error);
+      toast({
+        title: 'Error',
+        description: "Could not open your email client. Please try copying the email address.",
+        variant: 'destructive',
+      });
+    }
+    
     form.reset();
-    setIsSubmitting(false);
   };
 
   return (
@@ -97,9 +107,9 @@ export default function ContactSection() {
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isSubmitting} className="w-full text-lg py-6 transition-transform hover:scale-105">
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-              {!isSubmitting && <Send className="ml-2 h-5 w-5" />}
+            <Button type="submit" className="w-full text-lg py-6 transition-transform hover:scale-105">
+              Send Message
+              <Send className="ml-2 h-5 w-5" />
             </Button>
           </form>
         </Form>

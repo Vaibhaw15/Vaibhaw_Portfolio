@@ -13,7 +13,7 @@ const testimonialsData: Testimonial[] = [
     "quote": "Vaibhaw's expertise in Flutter is exceptional. He delivered a robust, high-quality application that went beyond our expectations. His dedication, attention to detail, and problem-solving skills truly stand out.",
     "authorName": "Sudipta Samanta",
     "authorTitle": "Technical Lead, 1Channel",
-    "authorImageUrl": "https://placehold.co/100x100.png",
+    "authorImageUrl": "https://media.licdn.com/dms/image/v2/C5603AQH5Z_ksaiOB4g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1594881554401?e=1752710400&v=beta&t=ceD7zHMIBuRQy3gfwirOzE3e3WYq2e9r0N4CcmaiTVc",
     "authorImageHint": "Professional male portrait"
   },
   {
@@ -21,25 +21,25 @@ const testimonialsData: Testimonial[] = [
     "quote": "Vaibhaw was a pleasure to collaborate with. His ability to translate backend logic into intuitive Flutter interfaces made the development process seamless. His proactive approach and technical know-how ensured smooth integration and timely delivery.",
     "authorName": "Ankit Kumar",
     "authorTitle": "Backend Developer",
-    "authorImageUrl": "https://placehold.co/100x100.png",
+    "authorImageUrl":"https://media.licdn.com/dms/image/v2/D5603AQGvxW3Vd5eXmw/profile-displayphoto-shrink_800_800/B56ZOmnhc9GoAg-/0/1733667199592?e=1752710400&v=beta&t=eLzEd1svGtwjDrrfPiQn2qKEvPb3Nx_LbupJUocWudg",
     "authorImageHint": "Man smiling, professional portrait"
   }, 
-  {
-    "id": "3",
-    "quote": "Working with Vaibhaw was smooth and productive. As a backend developer, I valued how easily he integrated the frontend with our APIs. He’s not only a skilled Flutter developer but also an excellent communicator who brought valuable ideas to the table throughout the project.",
-    "authorName": "Ashish Kumar",
-    "authorTitle": "Backend Developer",
-    "authorImageUrl": "https://placehold.co/100x100.png",
-    "authorImageHint": "Professional tech person"
-  },
   {
     "id": "4",
     "quote": "Collaborating with Vaibhaw was a great experience. His clean architecture, attention to UI detail, and solid understanding of Flutter best practices stood out. As a fellow Flutter developer, I appreciated his ability to balance performance, maintainability, and user experience seamlessly.",
     "authorName": "Anagh Bhattacharjee",
     "authorTitle": "Senior Flutter Developer",
-    "authorImageUrl": "https://placehold.co/100x100.png",
+    "authorImageUrl": "https://media.licdn.com/dms/image/v2/D4D03AQHNoxyXLQB97g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1667125968230?e=1752710400&v=beta&t=XfJPuap9_2hjiRO7KLxAynxurIV7mC6pmo8GQrsetUs",
     "authorImageHint": "Flutter tech person"
-  }   
+  }  ,
+  {
+    "id": "3",
+    "quote": "Working with Vaibhaw was smooth and productive. As a backend developer, I valued how easily he integrated the frontend with our APIs. He is not only a skilled Flutter developer but also an excellent communicator who brought valuable ideas to the table throughout the project.",
+    "authorName": "Ashish Kumar Rajak",
+    "authorTitle": "Java Full Stack Developer",
+    "authorImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQFxHa3mkGbdoA/profile-displayphoto-shrink_800_800/B56ZbAgDMLGoAc-/0/1746986349854?e=1752710400&v=beta&t=1VUduthIAAn1mmSbd1D8ytpeq4PYWOLql0BYHO9y3iY",
+    "authorImageHint": "Professional tech person"
+  }
 ];
 
 export default function TestimonialsSection() {
