@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { SendHorizonal } from 'lucide-react'; // Changed from Download to SendHorizonal
+import { Download } from 'lucide-react'; // Changed from SendHorizonal to Download
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -34,26 +34,47 @@ export default function ContactSection() {
   });
 
   const onSubmit: SubmitHandler<ContactFormValues> = (data) => {
-    const recipientEmail = 'vaibhawsoni900@gmail.com';
-    const subject = `Portfolio Inquiry from ${data.name}`;
-    const body = `
-Name: ${data.name}
-Email: ${data.email}
+    // Prepare CSV content
+    // Escape commas and newlines in data to prevent CSV corruption
+    const escapeCsvCell = (cellData: string) => {
+      let escaped = cellData.replace(/"/g, '""'); // Escape double quotes
+      if (escaped.includes(',') || escaped.includes('\\n') || escaped.includes('"')) {
+        escaped = `"${escaped}"`; // Enclose in double quotes if it contains comma, newline, or quote
+      }
+      return escaped;
+    };
 
-Message:
-${data.message}
-    `;
+    const headers = ['Full Name', 'Email Address', 'Message'];
+    const rows = [
+      [
+        escapeCsvCell(data.name),
+        escapeCsvCell(data.email),
+        escapeCsvCell(data.message)
+      ]
+    ];
 
-    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.trim())}`;
+    let csvContent = headers.join(",") + "\\n"
+      + rows.map(e => e.join(",")).join("\\n");
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     
-    // Attempt to open the mail client
     if (typeof window !== "undefined") {
-      window.location.href = mailtoLink;
+      const link = document.createElement("a");
+      if (link.download !== undefined) { // feature detection
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "contact_inquiry.csv");
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }
     }
 
     toast({
-      title: 'Email Client Opening',
-      description: "Your email client should open shortly to send the message.",
+      title: 'Inquiry Data Downloaded',
+      description: "The contact details have been downloaded as contact_inquiry.csv.",
     });
     
     form.reset();
@@ -107,8 +128,8 @@ ${data.message}
               )}
             />
             <Button type="submit" className="w-full text-lg py-6 transition-transform hover:scale-105">
-              Send Message
-              <SendHorizonal className="ml-2 h-5 w-5" />
+              Download Inquiry Data
+              <Download className="ml-2 h-5 w-5" />
             </Button>
           </form>
         </Form>
