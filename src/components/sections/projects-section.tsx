@@ -11,11 +11,10 @@ export const projectsData: Project[] = [
   {
     id: '1',
     title: '1Channel CRM',
-    description: 'A comprehensive CRM and Loyalty application for managing customer interactions, sales pipelines, and reward programs. Built with a focus on scalability and real-time data synchronization.',
+    description: 'This app helps businesses store and manage customer information in one place. It allows users to track leads, monitor sales, and improve customer interactions.\n\nThe app includes important features such as user management, where businesses can add team members and assign roles. It also has lead tracking, which helps businesses follow up with potential customers. Custom dashboards show sales performance in an easy-to-understand way, helping businesses make better decisions.\n\nAnother key feature is real-time notifications, which keep users updated on important activities like new leads, sales updates, or customer interactions. The goal of this app is to provide a simple and effective way for businesses to manage their customers and grow their sales.',
     imageUrl: 'https://play-lh.googleusercontent.com/3ToisVJsNVlEvmPEACTvmZvVswOf5AChrOc-TuKHiy6sYJWh-V9RLx5FYENNKKma5V4=w1052-h592-rw', // Card preview image
     images: [ // Gallery images for detail page
       'https://play-lh.googleusercontent.com/ArCPkw-6nSITNrB5qj61KDF48xyuBv7LkX5gjYt6cDGCMjz7Xsy2Htks2xJSfAXspxA=w1052-h592-rw', // Main display for detail
-      'https://play-lh.googleusercontent.com/9QVgRB-DYLB-5emBnt22ZKvkA358Y_18OkH4sWXA-YJ7qgQPEt-o0LL9afcmcGI2VGY=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/3ToisVJsNVlEvmPEACTvmZvVswOf5AChrOc-TuKHiy6sYJWh-V9RLx5FYENNKKma5V4=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/cyF5QFy9IHUFhK9_0pUZBr-f6iRkMQe_rW5fXokZbVtLUU0L12ztQe8y5_FGR0ML-2qb=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/ommeYuHEQY-IpbR9j6q8YwOlmTIiEV7293A4Erd_NOXIcFJOo-seMMu3FEHNQDQLpmw=w1052-h592-rw',
@@ -23,74 +22,76 @@ export const projectsData: Project[] = [
       'https://play-lh.googleusercontent.com/fy5F_FtvCPJ9c54uTPmivOuZq1SfZA2ztKnAqYOTE-uHbOrGBvDijyV1KfuI-cJjjg=w1052-h592-rw',
     ],
     imageHint: 'mobile app portfolio',
-    technologies: ['Flutter', 'Dart', 'Firebase', 'AWS', 'Razor Pay'],
+    technologies: ['Flutter', 'Dart', 'Firebase','BLoC','Crashlytics','Push Notification','SQLite'],
     projectUrl: '#', // General project link (e.g. GitHub repo if public)
     androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.onechannelcrm.assistive&hl=en_IN', // Example
     iosLiveUrl: 'https://sagaranghan.com/', 
-    duration: '12 Months',
-    role: 'Lead Developer',
+    duration: '18 Months',
+    role: 'Flutter Developer',
     keyFeatures: [
+      'User Authentication (Email)',
       'User Management & Role Assignment',
       'Lead Tracking & Sales Monitoring',
       'Customizable Dashboards & Reporting',
       'Real-time Notifications',
-      'AWS Secure User Authentication',
-      'Razor Pay Integration for Payments',
-      'Loyalty & Reward Points System',
-      'Product Catalog Management',
-      'Shopping Cart & Checkout Process',
+      'Secure User Authentication'
     ],
   },
   {
     id: '2',
-    title: 'E-commerce Groceries App',
-    description: 'A comprehensive e-commerce application for ordering groceries online, featuring user authentication, product catalog, cart, and checkout.',
+    title: 'RC Start',
+    description: 'The Royal Canin Start application is designed for Royal Canin’s retailers and customers. It serves as a platform to recruit young pet parents and guide them through the early stages of pet parenthood. The app offers tailored nutritional guidance for young pets, helping ensure their healthy growth.\n\nRetailers and customers can use the app to share useful insights, educate new pet owners, and provide personalized pet care recommendations. In return, they earn incentives for successful recruitments. The goal of the app is to strengthen customer engagement while promoting responsible and informed pet parenting with Royal Canin’s expert support.',
     imageUrl: 'https://placehold.co/600x400.png',
     images: [
-      'https://placehold.co/800x600.png',
-      'https://placehold.co/400x300.png',
-      'https://placehold.co/400x300.png', // Added third image
+      'https://play-lh.googleusercontent.com/OVDQ_vaEx5FB3JCec0NPKpUucuGEaAxhGms51U1N26xF8O6euKog72m35VRy9kfXVJU=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/gICXMiSCR-hUMnKI9slNg1EzW4odlu0UtQgUxrVOZQvmGBYrOd4KE09bYgbrDjHjWes=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/KoNDi1YFXuQNlM5OrG3rAIeY6nHEZPIZV-pZ_cXBcIq8xJC9X0y6wGbAp5_ipNPLoWI=w1052-h592-rw', 
+      'https://play-lh.googleusercontent.com/BDdUWO9wTEf3YxWGA24_ndtPk7e_8jFGvLKlY8sQYe0bkc2pVLLPG-vElH54e8QK7CAn=w1052-h592-rw'// Added third image
     ],
     imageHint: 'grocery app interface',
-    technologies: ['Flutter', 'Firebase', 'Stripe SDK'],
+    technologies: ['Flutter','Dart','BLoC', 'Firebase', 'Push Notification','SQLite'],
     projectUrl: '#',
-    androidLiveUrl: 'https://sagaranghan.com/',
-    iosLiveUrl: 'https://sagaranghan.com/',
+    androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.rcstartapp.com',
+    iosLiveUrl: 'https://apps.apple.com/is/app/rc-start/id6443498892',
     duration: '6 Months',
     role: 'Flutter Developer',
     keyFeatures: [
-      'User Authentication (Email/Social)',
-      'Product Catalog Browsing & Search',
+      'User Authentication (Mobile Number Otp)',
+      'Product Catalog Search',
       'Shopping Cart Management',
       'Secure Checkout with Stripe',
       'Order History & Tracking',
       'Push Notifications for Order Status',
+      'Help & Support Section with FAQs',
+      'Push Notifications',
+      'Help & Support Section with FAQs'
     ],
   },
   {
     id: '3',
-    title: 'Task Management App',
-    description: 'A sleek and intuitive task management application to help users organize their daily tasks, set reminders, and track progress.',
+    title: 'Crompton SAATHI',
+    description: 'Crompton SAATHI App is developed for professionals like plumbers, borers, and electricians. The app empowers users to earn and manage reward points for every installation of Crompton pumps. These points can be easily redeemed by transferring them directly to Paytm or GPay accounts.\n\nSaathi simplifies the reward tracking process, helping users stay updated on their earnings, manage their transactions, and benefit from their association with Crompton in a seamless and rewarding way.',
     imageUrl: 'https://placehold.co/600x400.png',
     images: [
-      'https://placehold.co/800x600.png',
-      'https://placehold.co/400x300.png',
-      'https://placehold.co/400x300.png', // Added third image
+      'https://play-lh.googleusercontent.com/8IiRG9l6QCmwqQoiUM9wVPdGzATmKaPTMoMoXB3jhIh0XsB9eALFhZVFT-VTmkpAydw=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/dVykGt2Fi0sqUxRIVASIsxe19QV-ElcJVfvbzZkB9_sHob1IRAjp3lB-fCsEesl7_lo=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/FdnQuxmWi9BEA2sSrfW1yH1FpyPSEcK5qx9GIJ3jpX8GTQm2m2fzt8Fh7VTTiAUXMQ=w1052-h592-rw', // Added third image
     ],
     imageHint: 'task list productivity',
-    technologies: ['Flutter', 'Dart', 'SQLite'],
+    technologies: ['Flutter', 'Dart','BLoC', 'SQLite','Push Notification'],
     projectUrl: '#',
-    androidLiveUrl: 'https://sagaranghan.com/',
-    iosLiveUrl: 'https://sagaranghan.com/',
-    duration: '3 Months',
-    role: 'Solo Developer',
+    androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.crompton.saathi&hl=en_IN',
+    iosLiveUrl: 'https://apps.apple.com/in/app/crompton-saathi/id1608880919',
+    duration: '4 Months',
+    role: 'Flutter Developer',
     keyFeatures: [
-      'Create, Edit, Delete Tasks',
-      'Set Due Dates & Reminders',
-      'Task Prioritization',
-      'Categorization/Tagging',
-      'Progress Tracking',
-      'Local Data Storage with SQLite',
+      'User Authentication (Mobile Number OTP)',
+      'Cahfree Integration for Payments',
+      'Loyalty & Reward Points System',
+      'Real-time Reward Point Updates',
+      'Transaction History and Earnings Summary',
+      'Push Notifications for Offers and Updates',
+      'Help & Support Section with FAQs'
     ],
   },
   {
@@ -111,6 +112,7 @@ export const projectsData: Project[] = [
     duration: '4 Months',
     role: 'Flutter Developer',
     keyFeatures: [
+      'User Authentication (Mobile Number OTP)',
       'Real-time One-on-One Messaging',
       'Group Chat Functionality',
       'Firebase Authentication',
@@ -180,7 +182,7 @@ export default function ProjectsSection() {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 5).map((tech) => (
+                    {project.technologies.slice(0, 7).map((tech) => (
                       <Badge key={tech} variant="secondary" className="bg-accent text-accent-foreground">
                         {tech}
                       </Badge>
