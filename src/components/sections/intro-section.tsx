@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Download, Briefcase } from 'lucide-react';
+import { Download, Briefcase, Layers, Target, Flame } from 'lucide-react'; // Added Layers, Target, Flame
 import { useState, useEffect } from 'react';
 
 const phrases = ["Flutter Expert", "Flutter Developer", "Cross-Platform Expert"];
@@ -13,7 +13,7 @@ export default function IntroSection() {
   const [animatedExpertise, setAnimatedExpertise] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150);
+  const [loopDelay, setLoopDelay] = useState(150); // Initial delay, will be updated by animation logic
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -55,6 +55,7 @@ export default function IntroSection() {
     return () => clearTimeout(timeoutId);
   }, [animatedExpertise, currentIndex, isDeleting, phraseIndex, loopDelay]);
 
+
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
@@ -64,18 +65,39 @@ export default function IntroSection() {
 
 
   return (
-    <section id="intro" className="bg-secondary pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-16 lg:pb-20">
-      <div className="container mx-auto grid md:grid-cols-2 items-center overflow-hidden rounded-lg px-4 sm:px-6 lg:px-8">
-        {/* Image container - made square, centered, rounded, and hides overflow */}
+    <section
+      id="intro"
+      className="bg-secondary pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-16 lg:pb-20 relative overflow-hidden"
+    >
+      {/* Background Icons */}
+      <Layers
+        className="absolute top-10 left-5 md:left-10 h-32 w-32 sm:h-40 sm:w-40 text-primary/10 transform -rotate-12 pointer-events-none"
+        aria-hidden="true"
+      />
+      <Target
+        className="absolute bottom-8 right-5 md:right-10 h-28 w-28 sm:h-32 sm:w-32 text-accent/10 transform rotate-[25deg] pointer-events-none"
+        aria-hidden="true"
+      />
+      <Flame
+        className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-36 w-36 text-muted-foreground/5 rotate-[5deg] pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* Main content container */}
+      <div className="container mx-auto grid md:grid-cols-2 items-center rounded-lg px-4 sm:px-6 lg:px-8 relative">
+        {/* Profile Picture Area */}
         <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto my-8 md:my-0 rounded-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
+          <div className="absolute inset-0 rounded-full bg-background/10 backdrop-blur-sm pointer-events-none"></div>
           <img
             src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            className="transition-all duration-500"
+            className="relative rounded-full transition-all duration-500" // Added relative
             data-ai-hint="professional portrait"
           />
         </div>
+
+        {/* Text Content Area */}
         <div className="p-6 md:p-10 lg:p-12 flex flex-col justify-center">
           <h1 className="font-bold text-primary mb-2">
             <span className="block text-2xl md:text-3xl lg:text-4xl">Hi, I'm</span>
