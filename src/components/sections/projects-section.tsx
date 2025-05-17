@@ -25,8 +25,8 @@ export const projectsData: Project[] = [
     imageHint: 'mobile app portfolio',
     technologies: ['Flutter', 'Dart', 'Firebase', 'AWS', 'Razor Pay'],
     projectUrl: '#', // General project link (e.g. GitHub repo if public)
-    androidLiveUrl: 'https://sagaranghan.com/', // Example
-    iosLiveUrl: 'https://sagaranghan.com/', // Updated to show iOS demo button
+    androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.onechannelcrm.assistive&hl=en_IN', // Example
+    iosLiveUrl: 'https://apps.apple.com/in/app/1channel-crm/id1637569093', // Updated to show iOS demo button
     duration: '12 Months',
     role: 'Lead Developer',
     keyFeatures: [
@@ -53,8 +53,8 @@ export const projectsData: Project[] = [
     imageHint: 'grocery app interface',
     technologies: ['Flutter', 'Firebase', 'Stripe SDK'],
     projectUrl: '#',
-    androidLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
-    iosLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
+    androidLiveUrl: 'https://sagaranghan.com/', 
+    iosLiveUrl: 'https://sagaranghan.com/', 
     duration: '6 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -79,8 +79,8 @@ export const projectsData: Project[] = [
     imageHint: 'task list productivity',
     technologies: ['Flutter', 'Dart', 'SQLite'],
     projectUrl: '#',
-    androidLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
-    iosLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
+    androidLiveUrl: 'https://sagaranghan.com/', 
+    iosLiveUrl: 'https://sagaranghan.com/', 
     duration: '3 Months',
     role: 'Solo Developer',
     keyFeatures: [
@@ -131,12 +131,12 @@ export default function ProjectsSection() {
           {displayedProjects.map((project) => (
             <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
               <Link href={`/projects/${project.id}`} className="flex flex-col group flex-grow">
-                <div className="relative w-full h-60 md:h-72">
+                <div className="relative w-full h-60 md:h-72 bg-muted/30"> {/* Added bg-muted/30 for letterbox area */}
                   <Image
                     src={project.imageUrl}
                     alt={project.title}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain' }} // Changed from 'cover' to 'contain'
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     data-ai-hint={project.imageHint}
                     className="transition-transform duration-500 group-hover:scale-105"
@@ -150,12 +150,11 @@ export default function ProjectsSection() {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 3).map((tech) => (
+                    {project.technologies.slice(0, 5).map((tech) => (
                       <Badge key={tech} variant="secondary" className="bg-accent text-accent-foreground">
                         {tech}
                       </Badge>
                     ))}
-                    {project.technologies.length > 3 && <Badge variant="outline">...</Badge>}
                   </div>
                 </CardContent>
               </Link>
