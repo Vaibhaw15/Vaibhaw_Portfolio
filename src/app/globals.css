@@ -21,11 +21,11 @@ body {
     --primary: 271 100% 25.3%; /* Deep Purple #4B0082 */
     --primary-foreground: 240 100% 97%; /* Very light Lavender/almost white */
 
-    --secondary: 240 66.7% 94.1%; /* Lavender #E6E6FA */
-    --secondary-foreground: 271 100% 25.3%; /* Deep Purple */
+    --secondary: 240 60% 96%; /* Slightly less saturated lavender for section backgrounds */
+    --secondary-foreground: 271 70% 28%; /* Darker purple for text on secondary */
 
-    --muted: 240 60% 90%; /* Lighter Lavender */
-    --muted-foreground: 271 50% 40%; /* Muted purple */
+    --muted: 240 50% 93%; /* Softer, grayer lavender for muted backgrounds/elements */
+    --muted-foreground: 271 40% 45%; /* Softer purple for text on muted */
 
     --accent: 180 100% 25.1%; /* Teal #008080 */
     --accent-foreground: 180 100% 95%; /* Very light/white */
@@ -33,74 +33,74 @@ body {
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 40% 88%; /* Lavender-ish border */
-    --input: 240 40% 92%; /* Lavender-ish input background */
+    --border: 240 30% 90%; /* Softer lavender-ish border */
+    --input: 240 30% 95%; /* Lighter lavender-ish input background */
     --ring: 180 100% 30%; /* Slightly lighter Teal for focus rings */
 
     --radius: 0.5rem;
 
     /* Chart colors - can be adjusted if charts are used */
-    --chart-1: 271 100% 25.3%; /* Primary */
-    --chart-2: 180 100% 25.1%; /* Accent */
-    --chart-3: 240 66.7% 85%; /* Lighter Lavender */
+    --chart-1: var(--primary);
+    --chart-2: var(--accent);
+    --chart-3: 240 66.7% 85%; 
     --chart-4: 271 70% 50%;
     --chart-5: 180 70% 50%;
 
-    /* Sidebar specific colors - updated to match theme */
-    --sidebar-background: 240 80% 97%; /* Lighter Lavender variant */
-    --sidebar-foreground: 271 60% 20%; /* Dark Purple */
-    --sidebar-primary: 271 100% 25.3%; /* Deep Purple */
-    --sidebar-primary-foreground: 240 100% 97%; /* Light Lavender */
-    --sidebar-accent: 180 100% 25.1%; /* Teal */
-    --sidebar-accent-foreground: 180 100% 95%; /* Light Teal Text */
-    --sidebar-border: 240 40% 88%; /* Lavender-ish border */
-    --sidebar-ring: 180 100% 30%; /* Teal */
-  }
-
-  .dark {
-    --background: 220 20% 8%; /* Deeper dark blue */
-    --foreground: 210 20% 96%; /* Brighter light grayish blue */
-
-    --card: 220 20% 13%; /* Slightly lighter than new background */
-    --card-foreground: 210 20% 96%; 
-
-    --popover: 220 20% 11%; /* Slightly darker than card for depth */
-    --popover-foreground: 210 20% 96%;
-
-    --primary: 250 75% 70%; /* Vibrant lavender/blue - Kept */
-    --primary-foreground: 250 40% 10%; /* Dark indigo for text on primary buttons - Kept */
-
-    --secondary: 220 15% 16%; /* Muted dark blue for section backgrounds, distinct */
-    --secondary-foreground: 210 20% 88%; /* Text on secondary backgrounds */
-
-    --muted: 220 15% 22%; /* Darker muted blue */
-    --muted-foreground: 210 20% 65%; /* Muted light gray-blue - Kept */
-
-    --accent: 180 70% 60%; /* Bright teal/cyan - Kept */
-    --accent-foreground: 180 65% 10%; /* Dark teal for text on accent buttons - Kept */
-
-    --destructive: 0 70% 55%; /* Slightly deeper red */
-    --destructive-foreground: 0 0% 100%; /* White - Kept */
-
-    --border: 220 20% 20%; /* Subtle border, slightly darker */
-    --input: 220 20% 16%; /* Input background, consistent with new card/bg tones */
-    --ring: 250 75% 75%; /* Lighter primary for focus rings - Kept */
-
-    /* Chart colors - dark theme */
-    --chart-1: 250 75% 70%; /* Primary (dark theme) */
-    --chart-2: 180 65% 60%; /* Accent (dark theme) */
-    --chart-3: 220 20% 50%; /* A medium muted blue */
-    --chart-4: 250 50% 60%; /* A less saturated primary */
-    --chart-5: 180 40% 50%; /* A less saturated accent */
-
-    /* Sidebar specific colors - dark theme */
-    --sidebar-background: 220 20% 10%; /* Distinct from main background and cards */
-    --sidebar-foreground: 210 20% 90%; /* Kept */
+    /* Sidebar specific colors - light theme */
+    --sidebar-background: 240 80% 97%; /* Light Lavender variant, distinct */
+    --sidebar-foreground: var(--foreground);
     --sidebar-primary: var(--primary);
     --sidebar-primary-foreground: var(--primary-foreground);
     --sidebar-accent: var(--accent);
     --sidebar-accent-foreground: var(--accent-foreground);
-    --sidebar-border: 220 20% 18%; /* Border for sidebar internal elements */
+    --sidebar-border: 240 40% 90%; /* Consistent with main border or slightly different */
+    --sidebar-ring: var(--ring);
+  }
+
+  .dark {
+    --background: 220 20% 7%; /* Deeper dark blue/charcoal */
+    --foreground: 210 25% 95%; /* Brighter, crisper light grayish blue */
+
+    --card: 220 18% 12%; /* Slightly lighter than background for cards */
+    --card-foreground: 210 25% 95%; 
+
+    --popover: 220 18% 10%; /* Darker than card for depth */
+    --popover-foreground: 210 25% 95%;
+
+    --primary: 250 80% 70%; /* Vibrant lavender/blue */
+    --primary-foreground: 250 50% 15%; /* Dark indigo for text on primary */
+
+    --secondary: 220 15% 15%; /* Muted dark blue for section backgrounds */
+    --secondary-foreground: 210 20% 90%; /* Brighter text on secondary */
+
+    --muted: 220 15% 20%; /* Darker muted blue for subtle elements */
+    --muted-foreground: 210 20% 70%; /* Brighter muted text */
+
+    --accent: 180 75% 60%; /* Bright teal/cyan */
+    --accent-foreground: 180 70% 10%; /* Dark teal for text on accent */
+
+    --destructive: 0 70% 55%; 
+    --destructive-foreground: 0 0% 100%; 
+
+    --border: 220 15% 25%; /* Subtle border, slightly more visible */
+    --input: 220 15% 18%; /* Input background, distinct but dark */
+    --ring: 250 80% 75%; /* Lighter primary for focus rings */
+
+    /* Chart colors - dark theme */
+    --chart-1: var(--primary); 
+    --chart-2: var(--accent); 
+    --chart-3: 220 20% 50%; 
+    --chart-4: 250 50% 60%; 
+    --chart-5: 180 40% 50%; 
+
+    /* Sidebar specific colors - dark theme */
+    --sidebar-background: 220 20% 10%; /* Distinct from main background and cards */
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: 220 15% 22%; /* Border for sidebar internal elements */
     --sidebar-ring: var(--ring);
   }
 }
@@ -130,3 +130,4 @@ body {
     100% { transform: translateX(-50%); } /* Scrolls one full set of duplicated items */
   }
 }
+
