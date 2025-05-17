@@ -3,12 +3,16 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl: string; // Main image for card, can be first in detail gallery
+  images?: string[]; // Array of image URLs for the detail page gallery
   imageHint: string;
   technologies: string[];
-  projectUrl: string; // Kept for data integrity, but no button for it now
+  projectUrl: string; // Kept for data integrity, might be used for a general "source" link if needed
   androidLiveUrl?: string;
   iosLiveUrl?: string;
+  duration?: string; // e.g., "4 Months"
+  role?: string; // e.g., "Developer"
+  keyFeatures?: string[]; // Array of key features as strings
 }
 
 export interface Testimonial {
