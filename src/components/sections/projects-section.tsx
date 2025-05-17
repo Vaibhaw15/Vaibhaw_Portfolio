@@ -26,7 +26,7 @@ export const projectsData: Project[] = [
     technologies: ['Flutter', 'Dart', 'Firebase', 'AWS', 'Razor Pay'],
     projectUrl: '#', // General project link (e.g. GitHub repo if public)
     androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.onechannelcrm.assistive&hl=en_IN', // Example
-    iosLiveUrl: 'https://apps.apple.com/in/app/1channel-crm/id1637569093', // Updated to show iOS demo button
+    iosLiveUrl: 'https://sagaranghan.com/', // Updated to show iOS demo button
     duration: '12 Months',
     role: 'Lead Developer',
     keyFeatures: [
@@ -131,16 +131,31 @@ export default function ProjectsSection() {
           {displayedProjects.map((project) => (
             <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
               <Link href={`/projects/${project.id}`} className="flex flex-col group flex-grow">
-                <div className="relative w-full h-60 md:h-72"> {/* Removed bg-muted/30 */}
-                  <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    fill
-                    style={{ objectFit: 'cover' }} // Changed from 'contain' to 'cover'
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    data-ai-hint={project.imageHint}
-                    className="transition-transform duration-500 group-hover:scale-105"
-                  />
+                <div className="relative w-full h-60 md:h-72 flex overflow-hidden">
+                  {/* Section 1 - Image 1 */}
+                  <div className="relative w-1/2 h-full">
+                    <Image
+                      src={(project.images && project.images.length > 0) ? project.images[0] : 'https://placehold.co/300x400.png'}
+                      alt={`${project.title} - Preview 1`}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 17vw"
+                      data-ai-hint={project.imageHint || "app screenshot"}
+                      className="transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  {/* Section 2 - Image 2 */}
+                  <div className="relative w-1/2 h-full border-l-2 border-card">
+                    <Image
+                      src={(project.images && project.images.length > 1) ? project.images[1] : 'https://placehold.co/300x400.png'}
+                      alt={`${project.title} - Preview 2`}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 17vw"
+                      data-ai-hint={project.imageHint ? project.imageHint.split(" ")[0] + " detail" : "app detail"}
+                      className="transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                 </div>
                 <CardHeader>
                   <CardTitle className="text-2xl text-primary group-hover:underline">{project.title}</CardTitle>
