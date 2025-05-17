@@ -23,7 +23,7 @@ export const projectsData: Project[] = [
     technologies: ['Flutter', 'Dart', 'Firebase', 'AWS', 'Razor Pay'],
     projectUrl: '#', // General project link (e.g. GitHub repo if public)
     androidLiveUrl: 'https://sagaranghan.com/', // Example
-    iosLiveUrl: '#',
+    iosLiveUrl: 'https://sagaranghan.com/', // Updated to show iOS demo button
     duration: '12 Months',
     role: 'Lead Developer',
     keyFeatures: [
