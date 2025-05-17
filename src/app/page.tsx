@@ -18,7 +18,7 @@ export default function HomePage() {
       <ExperienceEducationSection />
       <TestimonialsSection />
 
-      <section className="bg-background relative overflow-hidden">
+      <section className="bg-secondary relative overflow-hidden">
         <Flame
             className="absolute top-1/2 right-10 h-56 w-56 text-primary/10 opacity-50 transform -translate-y-1/2 rotate-[10deg] pointer-events-none z-0 hidden lg:block"
             aria-hidden="true"
