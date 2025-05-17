@@ -51,7 +51,7 @@ export const projectsData: Project[] = [
     technologies: ['Flutter', 'Firebase', 'Stripe SDK'],
     projectUrl: '#',
     androidLiveUrl: '#',
-    iosLiveUrl: '#',
+    iosLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
     duration: '6 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -77,7 +77,7 @@ export const projectsData: Project[] = [
     technologies: ['Flutter', 'Dart', 'SQLite'],
     projectUrl: '#',
     androidLiveUrl: '#',
-    iosLiveUrl: '#',
+    iosLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
     duration: '3 Months',
     role: 'Solo Developer',
     keyFeatures: [
