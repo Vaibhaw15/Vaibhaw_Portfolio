@@ -1,8 +1,12 @@
 
+"use client";
+
 import type { WorkExperienceItem, EducationItem } from '@/lib/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Briefcase, GraduationCap, Layers, Target, Flame } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const workExperienceData: WorkExperienceItem[] = [
   {
@@ -51,6 +55,33 @@ const educationData: EducationItem[] = [
 ];
 
 export default function ExperienceEducationSection() {
+  const [isTitleVisible, setTitleVisible] = useState(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const element = titleRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTitleVisible(true);
+            observer.unobserve(element); // Animate only once
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(element);
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
   return (
     <section id="experience" className="bg-secondary relative overflow-hidden">
       <Layers
@@ -63,7 +94,15 @@ export default function ExperienceEducationSection() {
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">Experience & Education</h2>
+          <h2
+            ref={titleRef}
+            className={cn(
+              'text-3xl md:text-4xl font-bold text-primary scroll-animated-item',
+              isTitleVisible ? 'slide-from-left-active' : 'slide-from-left-initial'
+            )}
+          >
+            Experience & Education
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
             My professional journey and educational background that have shaped my career.
           </p>

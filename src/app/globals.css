@@ -58,33 +58,33 @@ body {
   }
 
   .dark {
-    --background: 224 71% 4%; /* Very dark navy, almost black */
-    --foreground: 210 20% 98%; /* Very light grey, almost white */
+    --background: 222 84% 4.9%; /* Very dark navy, almost black */
+    --foreground: 210 40% 98%; /* Very light grey, almost white */
 
-    --card: 224 71% 9%; /* Slightly lighter navy for cards */
-    --card-foreground: 210 20% 98%; 
+    --card: 222 84% 9.0%; /* Slightly lighter navy for cards */
+    --card-foreground: 210 40% 98%; 
 
-    --popover: 224 71% 8%; /* Slightly darker than card for depth */
-    --popover-foreground: 210 20% 98%;
+    --popover: 222 84% 8.0%; /* Slightly darker than card for depth */
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 265 89% 70%; /* Vibrant, slightly lighter purple */
-    --primary-foreground: 210 20% 98%; /* Light text on primary */
+    --primary: 263.4 70.0% 50.4%; /* Vibrant, slightly lighter purple */
+    --primary-foreground: 210 40% 98%; /* Light text on primary */
 
-    --secondary: 224 71% 12%; /* A slightly lighter shade for section backgrounds, distinct from card */
-    --secondary-foreground: 210 20% 90%; /* Slightly less bright text for secondary sections */
+    --secondary: 222 84% 12.0%; /* A slightly lighter shade for section backgrounds, distinct from card */
+    --secondary-foreground: 210 40% 90%; /* Slightly less bright text for secondary sections */
 
-    --muted: 224 71% 15%; /* Muted navy for subtle elements */
-    --muted-foreground: 210 20% 65%; /* Softer text for muted elements */
+    --muted: 222 84% 15.0%; /* Muted navy for subtle elements */
+    --muted-foreground: 210 40% 65%; /* Softer text for muted elements */
 
     --accent: 340 95% 65%; /* Vibrant pink/magenta */
-    --accent-foreground: 210 20% 98%; /* Light text on accent */
+    --accent-foreground: 210 40% 98%; /* Light text on accent */
 
-    --destructive: 0 70% 55%; 
-    --destructive-foreground: 0 0% 100%; 
+    --destructive: 0 62.8% 30.6%; 
+    --destructive-foreground: 0 0% 98%; 
 
-    --border: 224 71% 15%; /* Subtle border, same as muted bg */
-    --input: 224 71% 15%; /* Input background, distinct but dark */
-    --ring: 265 89% 75%; /* Slightly lighter primary for focus rings */
+    --border: 222 84% 15.0%; /* Subtle border, same as muted bg */
+    --input: 222 84% 15.0%; /* Input background, distinct but dark */
+    --ring: 263.4 70.0% 55.4%; /* Slightly lighter primary for focus rings */
 
     /* Chart colors - dark theme */
     --chart-1: var(--primary); 
@@ -94,13 +94,13 @@ body {
     --chart-5: 340 60% 50%; /* Adjusted to new accent family */
 
     /* Sidebar specific colors - dark theme */
-    --sidebar-background: 224 71% 7%; /* Distinct from main background and cards */
+    --sidebar-background: 222 84% 7.0%; /* Distinct from main background and cards */
     --sidebar-foreground: var(--foreground);
     --sidebar-primary: var(--primary);
     --sidebar-primary-foreground: var(--primary-foreground);
     --sidebar-accent: var(--accent);
     --sidebar-accent-foreground: var(--accent-foreground);
-    --sidebar-border: 224 71% 12%; /* Border for sidebar internal elements */
+    --sidebar-border: 222 84% 12.0%; /* Border for sidebar internal elements */
     --sidebar-ring: var(--ring);
   }
 }
@@ -128,5 +128,22 @@ body {
   @keyframes marquee {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); } /* Scrolls one full set of duplicated items */
+  }
+
+  /* Scroll-triggered animation */
+  .scroll-animated-item {
+    transition-property: opacity, transform;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+  }
+
+  .slide-from-left-initial {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  .slide-from-left-active {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }

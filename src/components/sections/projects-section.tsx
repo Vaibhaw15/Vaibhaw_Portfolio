@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Project } from '@/lib/types';
@@ -6,6 +8,8 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Layers, Target, Flame } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 export const projectsData: Project[] = [
   {
@@ -76,6 +80,7 @@ export const projectsData: Project[] = [
       'https://play-lh.googleusercontent.com/8IiRG9l6QCmwqQoiUM9wVPdGzATmKaPTMoMoXB3jhIh0XsB9eALFhZVFT-VTmkpAydw=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/dVykGt2Fi0sqUxRIVASIsxe19QV-ElcJVfvbzZkB9_sHob1IRAjp3lB-fCsEesl7_lo=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/FdnQuxmWi9BEA2sSrfW1yH1FpyPSEcK5qx9GIJ3jpX8GTQm2m2fzt8Fh7VTTiAUXMQ=w1052-h592-rw',
+      'https://placehold.co/600x400.png', // Placeholder for potential fourth image
     ],
     imageHint: 'task list productivity',
     technologies: ['Flutter', 'Dart','BLoC', 'SQLite','Push Notification'],
@@ -125,6 +130,32 @@ export const projectsData: Project[] = [
 
 export default function ProjectsSection() {
   const displayedProjects = projectsData.slice(0, 3);
+  const [isTitleVisible, setTitleVisible] = useState(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const element = titleRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTitleVisible(true);
+            observer.unobserve(element); // Animate only once
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(element);
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
 
   return (
     <section id="projects" className="bg-background relative overflow-hidden">
@@ -142,7 +173,13 @@ export default function ProjectsSection() {
       />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
+        <h2
+          ref={titleRef}
+          className={cn(
+            'text-3xl md:text-4xl font-bold text-center mb-12 text-primary scroll-animated-item',
+            isTitleVisible ? 'slide-from-left-active' : 'slide-from-left-initial'
+          )}
+        >
           Featured Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -5,7 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Download, Briefcase, Layers, Target, Flame } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
 const phrases = ["Flutter Expert", "Flutter Developer", "Cross-Platform Expert"];
 
@@ -16,6 +17,9 @@ export default function IntroSection() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopDelay, setLoopDelay] = useState(150); 
   const [showCursor, setShowCursor] = useState(true);
+
+  const [isTitleVisible, setTitleVisible] = useState(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   const TYPING_SPEED = 150;
   const DELETING_SPEED = 75;
@@ -63,6 +67,30 @@ export default function IntroSection() {
     return () => clearInterval(cursorInterval);
   }, []);
 
+  useEffect(() => {
+    const element = titleRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTitleVisible(true);
+            observer.unobserve(element); // Animate only once
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(element);
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
 
   return (
     <section
@@ -95,7 +123,13 @@ export default function IntroSection() {
         </div>
 
         <div className="p-6 md:p-10 lg:p-12 flex flex-col justify-center">
-          <h1 className="font-bold text-primary mb-2">
+          <h1
+            ref={titleRef}
+            className={cn(
+              'font-bold text-primary mb-2 scroll-animated-item',
+              isTitleVisible ? 'slide-from-left-active' : 'slide-from-left-initial'
+            )}
+          >
             <span className="block text-2xl md:text-3xl lg:text-4xl">Hi, I'm</span>
             <span className="block text-4xl md:text-5xl lg:text-6xl">Vaibhaw Soni</span>
           </h1>
