@@ -13,7 +13,7 @@ export default function IntroSection() {
   const [animatedExpertise, setAnimatedExpertise] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150); 
+  const [loopDelay, setLoopDelay] = useState(150);
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -58,7 +58,7 @@ export default function IntroSection() {
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 530); 
+    }, 530);
     return () => clearInterval(cursorInterval);
   }, []);
 
@@ -67,12 +67,12 @@ export default function IntroSection() {
     <section id="intro" className="bg-secondary pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-16 lg:pb-20">
       <div className="container mx-auto grid md:grid-cols-2 items-center overflow-hidden rounded-lg px-4 sm:px-6 lg:px-8">
         {/* Image container - made square, centered, rounded, and hides overflow */}
-        <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto my-8 md:my-0 rounded-full overflow-hidden ring-2 ring-primary/50 ring-offset-4 ring-offset-secondary transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto my-8 md:my-0 rounded-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
           <img
             src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            className="grayscale hover:grayscale-0 transition-all duration-500" 
+            className="transition-all duration-500"
             data-ai-hint="professional portrait"
           />
         </div>
@@ -81,11 +81,11 @@ export default function IntroSection() {
             <span className="block text-2xl md:text-3xl lg:text-4xl">Hi, I'm</span>
             <span className="block text-4xl md:text-5xl lg:text-6xl">Vaibhaw Soni</span>
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-accent mb-6 min-h-[1.5em]"> 
+          <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-accent mb-6 min-h-[1.5em]">
             {animatedExpertise}
             {showCursor && <span className="animate-pulse ml-0.5 text-accent">|</span>}
           </p>
-          
+
           <p className="text-muted-foreground mb-8 text-base md:text-lg leading-relaxed">
             Passionate Flutter Developer with strong experience in building responsive, scalable, and real-time mobile applications. Skilled in Dart, Flutter, Firebase, REST APIs, and advanced state management solutions like BLoC, Riverpod, GetX, and MobX. Proficient in implementing animations (implicit & explicit), API integrations, real-time features (WebRTC), and testing (unit/BLoC testing)
           </p>
