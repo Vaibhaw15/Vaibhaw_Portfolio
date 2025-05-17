@@ -50,7 +50,7 @@ export const projectsData: Project[] = [
     imageHint: 'grocery app interface',
     technologies: ['Flutter', 'Firebase', 'Stripe SDK'],
     projectUrl: '#',
-    androidLiveUrl: '#',
+    androidLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
     iosLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
     duration: '6 Months',
     role: 'Flutter Developer',
@@ -76,7 +76,7 @@ export const projectsData: Project[] = [
     imageHint: 'task list productivity',
     technologies: ['Flutter', 'Dart', 'SQLite'],
     projectUrl: '#',
-    androidLiveUrl: '#',
+    androidLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
     iosLiveUrl: 'https://sagaranghan.com/', // Updated placeholder
     duration: '3 Months',
     role: 'Solo Developer',
