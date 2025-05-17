@@ -25,7 +25,8 @@ export default function AnimatedEducationCard({ education, index }: AnimatedEduc
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            observer.unobserve(element);
+          } else {
+            setIsVisible(false); // Reset when out of view
           }
         });
       },

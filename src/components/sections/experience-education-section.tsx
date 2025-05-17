@@ -67,7 +67,8 @@ export default function ExperienceEducationSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTitleVisible(true);
-            observer.unobserve(element);
+          } else {
+            setTitleVisible(false); // Reset when out of view
           }
         });
       },

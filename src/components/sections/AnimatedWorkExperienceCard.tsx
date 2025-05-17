@@ -25,7 +25,8 @@ export default function AnimatedWorkExperienceCard({ experience, index }: Animat
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            observer.unobserve(element);
+          } else {
+            setIsVisible(false); // Reset when out of view
           }
         });
       },

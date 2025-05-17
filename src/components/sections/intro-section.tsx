@@ -76,7 +76,8 @@ export default function IntroSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTitleVisible(true);
-            observer.unobserve(element); // Animate only once
+          } else {
+            setTitleVisible(false); // Reset when out of view
           }
         });
       },

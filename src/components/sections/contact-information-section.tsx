@@ -55,7 +55,8 @@ export default function ContactInformationSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            observer.unobserve(element);
+          } else {
+            setIsVisible(false); // Reset when out of view
           }
         });
       },

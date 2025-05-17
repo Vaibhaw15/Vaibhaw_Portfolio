@@ -108,8 +108,8 @@ export const projectsData: Project[] = [
     imageHint: 'chat interface messages',
     technologies: ['Flutter', 'Firebase Firestore', 'Firebase Auth'],
     projectUrl: '#',
-    androidLiveUrl: '#', // Updated from sagaranghan.com to #
-    iosLiveUrl: '#', // Updated from sagaranghan.com to #
+    androidLiveUrl: '#', 
+    iosLiveUrl: '#', 
     duration: '4 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -138,7 +138,8 @@ export default function ProjectsSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTitleVisible(true);
-            observer.unobserve(element);
+          } else {
+            setTitleVisible(false); // Reset when out of view
           }
         });
       },

@@ -29,7 +29,8 @@ export default function AnimatedProjectCard({ project, index }: AnimatedProjectC
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            observer.unobserve(element);
+          } else {
+            setIsVisible(false); // Reset when out of view
           }
         });
       },
@@ -129,4 +130,3 @@ export default function AnimatedProjectCard({ project, index }: AnimatedProjectC
     </Card>
   );
 }
-
