@@ -1,11 +1,19 @@
 
 import { Card, CardContent } from '@/components/ui/card';
-import { Quote as QuoteIcon } from 'lucide-react'; // Renamed to avoid conflict if 'Quote' is used as a component name
+import { Quote as QuoteIcon, Layers, Target } from 'lucide-react';
 
 export default function QuoteSection() {
   return (
-    <section id="personal-philosophy" className="py-6 md:py-8 lg:py-10 bg-secondary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="personal-philosophy" className="py-6 md:py-8 lg:py-10 bg-secondary relative overflow-hidden">
+       <Layers
+        className="absolute top-1/4 left-10 h-24 w-24 text-primary/10 opacity-30 transform -rotate-[15deg] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <Target
+        className="absolute bottom-1/4 right-10 h-20 w-20 text-accent/10 opacity-30 transform rotate-[30deg] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Card className="max-w-5xl mx-auto shadow-lg rounded-lg">
           <CardContent className="p-6 md:p-8 relative">
             <QuoteIcon

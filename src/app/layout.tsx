@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Vaibhaw's Space - Portfolio",
   description: "The personal portfolio of Sagar, showcasing projects, skills, and testimonials.",
   icons: {
-    icon: '/favicon.ico', // Assuming you might add a favicon later
+    icon: '/favicon.ico', 
   },
 };
 
@@ -31,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+        {/* Background icons removed from here, will be added per section */}
         <Header />
         <main className="flex-1">
           {children}

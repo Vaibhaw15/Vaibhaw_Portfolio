@@ -2,7 +2,6 @@
 "use client";
 
 import Link from 'next/link';
-// Removed: import Image from 'next/image'; // Using standard <img> for now
 import { Button } from '@/components/ui/button';
 import { Download, Briefcase, Layers, Target, Flame } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -14,7 +13,7 @@ export default function IntroSection() {
   const [animatedExpertise, setAnimatedExpertise] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150);
+  const [loopDelay, setLoopDelay] = useState(150); // Initial delay
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -27,19 +26,23 @@ export default function IntroSection() {
 
     const handleTypingLoop = () => {
       if (!isDeleting) {
+        // Typing
         if (currentIndex < currentPhrase.length) {
           setAnimatedExpertise((prev) => prev + currentPhrase.charAt(currentIndex));
           setCurrentIndex((prev) => prev + 1);
           setLoopDelay(TYPING_SPEED);
         } else {
+          // Finished typing, pause then start deleting
           setLoopDelay(PAUSE_DURATION_AFTER_TYPING);
           setIsDeleting(true);
         }
       } else {
+        // Deleting
         if (animatedExpertise.length > 0) {
           setAnimatedExpertise((prev) => prev.substring(0, prev.length - 1));
           setLoopDelay(DELETING_SPEED);
         } else {
+          // Finished deleting, pause then move to next phrase
           setIsDeleting(false);
           setCurrentIndex(0);
           setPhraseIndex((prev) => (prev + 1) % phrases.length);
@@ -55,7 +58,7 @@ export default function IntroSection() {
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 530);
+    }, 530); // Standard cursor blink rate
     return () => clearInterval(cursorInterval);
   }, []);
 
@@ -65,35 +68,31 @@ export default function IntroSection() {
       id="intro"
       className="bg-secondary pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-16 lg:pb-20 relative overflow-hidden"
     >
-      {/* Background Icons */}
+      {/* Decorative Background Icons */}
       <Layers
-        className="absolute top-10 left-5 md:left-10 h-32 w-32 sm:h-40 sm:w-40 text-primary/10 transform -rotate-12 pointer-events-none"
+        className="absolute top-10 left-5 md:left-10 h-32 w-32 sm:h-40 sm:w-40 text-primary/10 opacity-30 transform -rotate-12 pointer-events-none z-0"
         aria-hidden="true"
       />
       <Target
-        className="absolute bottom-8 right-5 md:right-10 h-28 w-28 sm:h-32 sm:w-32 text-accent/10 transform rotate-[25deg] pointer-events-none"
+        className="absolute bottom-8 right-5 md:right-10 h-28 w-28 sm:h-32 sm:w-32 text-accent/10 opacity-30 transform rotate-[25deg] pointer-events-none z-0"
         aria-hidden="true"
       />
-      <Flame
-        className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-36 w-36 text-muted-foreground/10 rotate-[5deg] pointer-events-none"
+       <Flame
+        className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-36 w-36 text-muted-foreground/10 opacity-20 rotate-[5deg] pointer-events-none z-0"
         aria-hidden="true"
       />
 
-      {/* Main content container */}
-      <div className="container mx-auto grid md:grid-cols-2 items-center rounded-lg px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto grid md:grid-cols-2 items-center rounded-lg px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Profile Picture Area */}
         <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto my-8 md:my-0 rounded-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
-          {/* <div className="absolute inset-0 rounded-full bg-background/10 backdrop-blur-sm pointer-events-none"></div> */} {/* Temporarily removed for debugging */}
           <img
             src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
-            className="w-full h-full object-cover transition-all duration-500"
+            className="w-full h-full object-cover"
             data-ai-hint="professional portrait"
           />
         </div>
 
-        {/* Text Content Area */}
         <div className="p-6 md:p-10 lg:p-12 flex flex-col justify-center">
           <h1 className="font-bold text-primary mb-2">
             <span className="block text-2xl md:text-3xl lg:text-4xl">Hi, I'm</span>
@@ -126,4 +125,3 @@ export default function IntroSection() {
     </section>
   );
 }
-

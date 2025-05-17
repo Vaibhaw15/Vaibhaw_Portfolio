@@ -5,7 +5,7 @@ import Image from 'next/image';
 import type { Testimonial } from '@/lib/types';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Star } from 'lucide-react';
+import { Star, Layers, Target, Flame } from 'lucide-react';
 
 const testimonialsData: Testimonial[] = [
   {
@@ -43,12 +43,19 @@ const testimonialsData: Testimonial[] = [
 ];
 
 export default function TestimonialsSection() {
-  // Duplicate testimonials for a seamless marquee effect
   const duplicatedTestimonials = [...testimonialsData, ...testimonialsData];
 
   return (
-    <section id="testimonials" className="bg-background py-12 md:py-16 lg:py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="bg-background py-12 md:py-16 lg:py-20 relative overflow-hidden">
+      <Layers
+        className="absolute top-1/4 left-1/4 h-48 w-48 text-primary/10 opacity-30 transform -translate-x-1/2 -translate-y-1/2 rotate-12 pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <Target
+        className="hidden sm:block absolute bottom-1/3 right-1/4 h-40 w-40 text-accent/10 opacity-30 transform translate-x-1/2 translate-y-1/2 -rotate-[25deg] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
           Words From Colleagues
         </h2>
@@ -57,7 +64,7 @@ export default function TestimonialsSection() {
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
-                className="flex-none w-full max-w-sm sm:max-w-md md:w-[calc(100%/2.5)] lg:w-[calc(100%/3.3)] xl:w-[calc(100%/3.5)] mx-3" // Responsive width with fixed aspect, mx for spacing
+                className="flex-none w-full max-w-sm sm:max-w-md md:w-[calc(100%/2.5)] lg:w-[calc(100%/3.3)] xl:w-[calc(100%/3.5)] mx-3" 
               >
                 <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardHeader className="pb-4">

@@ -2,7 +2,7 @@
 import type { WorkExperienceItem, EducationItem } from '@/lib/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Briefcase, GraduationCap } from 'lucide-react';
+import { Briefcase, GraduationCap, Layers, Target, Flame } from 'lucide-react';
 
 const workExperienceData: WorkExperienceItem[] = [
   {
@@ -24,7 +24,6 @@ const workExperienceData: WorkExperienceItem[] = [
 ],
     skills: ['Flutter', 'Dart', 'Java', 'Kotlin', 'Swift', 'Firebase', 'Rest APIs', 'Material Theme', 'MVP', 'Bloc/Cubit', 'GetX', 'Riverpod', 'Provider', 'WebRTC', 'Social Auth', 'Video/Audio Call', 'Push Notifications', 'Payment Gateway'],
   },
-  // Add more work experience items here
 ];
 
 const educationData: EducationItem[] = [
@@ -49,13 +48,20 @@ const educationData: EducationItem[] = [
     year: '2016',
     description: 'Completed 10th grade with distinction, excelling in subjects that built a strong academic foundation. Developed problem-solving skills and adaptability, paving the way for future studies in computer science.',
   },
-  // Add more education items here
 ];
 
 export default function ExperienceEducationSection() {
   return (
-    <section id="experience" className="bg-secondary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="bg-secondary relative overflow-hidden">
+      <Layers
+        className="absolute top-20 -left-20 h-64 w-64 text-primary/10 opacity-30 transform rotate-12 pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <Flame
+        className="absolute bottom-10 -right-10 h-72 w-72 text-accent/10 opacity-30 transform -rotate-[20deg] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">Experience & Education</h2>
           <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -65,7 +71,6 @@ export default function ExperienceEducationSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12">
-          {/* Work Experience Column */}
           <div>
             <h3 className="text-2xl font-semibold text-primary mb-8 flex items-center justify-center lg:justify-start">
               <Briefcase className="mr-3 h-7 w-7" />
@@ -106,7 +111,6 @@ export default function ExperienceEducationSection() {
             </div>
           </div>
 
-          {/* Education Column */}
           <div>
             <h3 className="text-2xl font-semibold text-primary mb-8 flex items-center justify-center lg:justify-start">
               <GraduationCap className="mr-3 h-7 w-7" />
