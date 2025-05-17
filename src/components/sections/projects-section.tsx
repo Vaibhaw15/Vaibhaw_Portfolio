@@ -12,12 +12,15 @@ export const projectsData: Project[] = [
     id: '1',
     title: '1Channel CRM',
     description: 'This app helps businesses store and manage customer information in one place. It allows users to track leads, monitor sales, and improve customer interactions.\n\nThe app includes important features such as user management, where businesses can add team members and assign roles. It also has lead tracking, which helps businesses follow up with potential customers. Custom dashboards show sales performance in an easy-to-understand way, helping businesses make better decisions.\n\nAnother key feature is real-time notifications, which keep users updated on important activities like new leads, sales updates, or customer interactions. The goal of this app is to provide a simple and effective way for businesses to manage their customers and grow their sales.',
-    imageUrl: 'https://placehold.co/600x400.png', // Card preview image
+    imageUrl: 'https://play-lh.googleusercontent.com/3ToisVJsNVlEvmPEACTvmZvVswOf5AChrOc-TuKHiy6sYJWh-V9RLx5FYENNKKma5V4=w1052-h592-rw', // Card preview image
     images: [ // Gallery images for detail page
-      'https://placehold.co/800x600.png', // Main display for detail
-      'https://placehold.co/400x300.png',
-      'https://placehold.co/400x300.png',
-      'https://placehold.co/400x300.png',
+      'https://play-lh.googleusercontent.com/ArCPkw-6nSITNrB5qj61KDF48xyuBv7LkX5gjYt6cDGCMjz7Xsy2Htks2xJSfAXspxA=w1052-h592-rw', // Main display for detail
+      'https://play-lh.googleusercontent.com/9QVgRB-DYLB-5emBnt22ZKvkA358Y_18OkH4sWXA-YJ7qgQPEt-o0LL9afcmcGI2VGY=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/3ToisVJsNVlEvmPEACTvmZvVswOf5AChrOc-TuKHiy6sYJWh-V9RLx5FYENNKKma5V4=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/cyF5QFy9IHUFhK9_0pUZBr-f6iRkMQe_rW5fXokZbVtLUU0L12ztQe8y5_FGR0ML-2qb=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/ommeYuHEQY-IpbR9j6q8YwOlmTIiEV7293A4Erd_NOXIcFJOo-seMMu3FEHNQDQLpmw=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/qMTcy6htZ8_lNvQzBLW9G3FsTBCpF8SyLs4t3UgXhe3SZQBW1Wmb_PTjNpoJkSCd9P4=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/fy5F_FtvCPJ9c54uTPmivOuZq1SfZA2ztKnAqYOTE-uHbOrGBvDijyV1KfuI-cJjjg=w1052-h592-rw',
     ],
     imageHint: 'mobile app portfolio',
     technologies: ['Flutter', 'Dart', 'Firebase', 'AWS', 'Razor Pay'],
