@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Download, Briefcase, Layers, Target, Flame } from 'lucide-react'; // Added Layers, Target, Flame
+import { Download, Briefcase, Layers, Target, Flame } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const phrases = ["Flutter Expert", "Flutter Developer", "Cross-Platform Expert"];
@@ -13,7 +13,7 @@ export default function IntroSection() {
   const [animatedExpertise, setAnimatedExpertise] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150); // Initial delay, will be updated by animation logic
+  const [loopDelay, setLoopDelay] = useState(150);
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -26,23 +26,19 @@ export default function IntroSection() {
 
     const handleTypingLoop = () => {
       if (!isDeleting) {
-        // Typing
         if (currentIndex < currentPhrase.length) {
           setAnimatedExpertise((prev) => prev + currentPhrase.charAt(currentIndex));
           setCurrentIndex((prev) => prev + 1);
           setLoopDelay(TYPING_SPEED);
         } else {
-          // Pause after typing
           setLoopDelay(PAUSE_DURATION_AFTER_TYPING);
           setIsDeleting(true);
         }
       } else {
-        // Deleting
         if (animatedExpertise.length > 0) {
           setAnimatedExpertise((prev) => prev.substring(0, prev.length - 1));
           setLoopDelay(DELETING_SPEED);
         } else {
-          // Pause after deleting, then switch phrase
           setIsDeleting(false);
           setCurrentIndex(0);
           setPhraseIndex((prev) => (prev + 1) % phrases.length);
@@ -55,14 +51,12 @@ export default function IntroSection() {
     return () => clearTimeout(timeoutId);
   }, [animatedExpertise, currentIndex, isDeleting, phraseIndex, loopDelay]);
 
-
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
     }, 530);
     return () => clearInterval(cursorInterval);
   }, []);
-
 
   return (
     <section
@@ -79,7 +73,7 @@ export default function IntroSection() {
         aria-hidden="true"
       />
       <Flame
-        className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-36 w-36 text-muted-foreground/5 rotate-[5deg] pointer-events-none"
+        className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-36 w-36 text-muted-foreground/10 rotate-[5deg] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -92,7 +86,7 @@ export default function IntroSection() {
             src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            className="relative rounded-full transition-all duration-500" // Added relative
+            className="rounded-full transition-all duration-500"
             data-ai-hint="professional portrait"
           />
         </div>
