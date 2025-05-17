@@ -67,12 +67,12 @@ export default function IntroSection() {
     <section id="intro" className="bg-secondary pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-16 lg:pb-20">
       <div className="container mx-auto grid md:grid-cols-2 items-center overflow-hidden rounded-lg px-4 sm:px-6 lg:px-8">
         {/* Image container - made square, centered, rounded, and hides overflow */}
-        <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto my-8 md:my-0 rounded-full overflow-hidden ring-2 ring-primary/50 ring-offset-4 ring-offset-secondary">
+        <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto my-8 md:my-0 rounded-full overflow-hidden ring-2 ring-primary/50 ring-offset-4 ring-offset-secondary transition-transform duration-300 ease-in-out hover:scale-105">
           <img
             src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            className="grayscale hover:grayscale-0 transition-all duration-500 rounded-full" 
+            className="grayscale hover:grayscale-0 transition-all duration-500" 
             data-ai-hint="professional portrait"
           />
         </div>

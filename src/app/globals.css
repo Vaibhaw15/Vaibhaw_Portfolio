@@ -58,49 +58,49 @@ body {
   }
 
   .dark {
-    --background: 220 20% 7%; /* Deeper dark blue/charcoal */
-    --foreground: 210 25% 95%; /* Brighter, crisper light grayish blue */
+    --background: 224 71% 4%; /* Very dark navy, almost black */
+    --foreground: 210 20% 98%; /* Very light grey, almost white */
 
-    --card: 220 18% 12%; /* Slightly lighter than background for cards */
-    --card-foreground: 210 25% 95%; 
+    --card: 224 71% 9%; /* Slightly lighter navy for cards */
+    --card-foreground: 210 20% 98%; 
 
-    --popover: 220 18% 10%; /* Darker than card for depth */
-    --popover-foreground: 210 25% 95%;
+    --popover: 224 71% 8%; /* Slightly darker than card for depth */
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 250 80% 70%; /* Vibrant lavender/blue */
-    --primary-foreground: 250 50% 15%; /* Dark indigo for text on primary */
+    --primary: 265 89% 70%; /* Vibrant, slightly lighter purple */
+    --primary-foreground: 210 20% 98%; /* Light text on primary */
 
-    --secondary: 220 15% 15%; /* Muted dark blue for section backgrounds */
-    --secondary-foreground: 210 20% 90%; /* Brighter text on secondary */
+    --secondary: 224 71% 12%; /* A slightly lighter shade for section backgrounds, distinct from card */
+    --secondary-foreground: 210 20% 90%; /* Slightly less bright text for secondary sections */
 
-    --muted: 220 15% 20%; /* Darker muted blue for subtle elements */
-    --muted-foreground: 210 20% 70%; /* Brighter muted text */
+    --muted: 224 71% 15%; /* Muted navy for subtle elements */
+    --muted-foreground: 210 20% 65%; /* Softer text for muted elements */
 
-    --accent: 180 75% 60%; /* Bright teal/cyan */
-    --accent-foreground: 180 70% 10%; /* Dark teal for text on accent */
+    --accent: 340 95% 65%; /* Vibrant pink/magenta */
+    --accent-foreground: 210 20% 98%; /* Light text on accent */
 
     --destructive: 0 70% 55%; 
     --destructive-foreground: 0 0% 100%; 
 
-    --border: 220 15% 25%; /* Subtle border, slightly more visible */
-    --input: 220 15% 18%; /* Input background, distinct but dark */
-    --ring: 250 80% 75%; /* Lighter primary for focus rings */
+    --border: 224 71% 15%; /* Subtle border, same as muted bg */
+    --input: 224 71% 15%; /* Input background, distinct but dark */
+    --ring: 265 89% 75%; /* Slightly lighter primary for focus rings */
 
     /* Chart colors - dark theme */
     --chart-1: var(--primary); 
     --chart-2: var(--accent); 
     --chart-3: 220 20% 50%; 
-    --chart-4: 250 50% 60%; 
-    --chart-5: 180 40% 50%; 
+    --chart-4: 265 50% 60%; /* Adjusted to purple family */
+    --chart-5: 340 60% 50%; /* Adjusted to new accent family */
 
     /* Sidebar specific colors - dark theme */
-    --sidebar-background: 220 20% 10%; /* Distinct from main background and cards */
+    --sidebar-background: 224 71% 7%; /* Distinct from main background and cards */
     --sidebar-foreground: var(--foreground);
     --sidebar-primary: var(--primary);
     --sidebar-primary-foreground: var(--primary-foreground);
     --sidebar-accent: var(--accent);
     --sidebar-accent-foreground: var(--accent-foreground);
-    --sidebar-border: 220 15% 22%; /* Border for sidebar internal elements */
+    --sidebar-border: 224 71% 12%; /* Border for sidebar internal elements */
     --sidebar-ring: var(--ring);
   }
 }
@@ -130,4 +130,3 @@ body {
     100% { transform: translateX(-50%); } /* Scrolls one full set of duplicated items */
   }
 }
-
