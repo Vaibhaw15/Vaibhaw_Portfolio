@@ -5,7 +5,7 @@ import type { Project } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Layers, Target, Flame } from 'lucide-react';
 
 export const projectsData: Project[] = [
   {
@@ -25,7 +25,7 @@ export const projectsData: Project[] = [
     technologies: ['Flutter', 'Dart', 'Firebase','BLoC','Crashlytics','Push Notification','SQLite'],
     projectUrl: '#', // General project link (e.g. GitHub repo if public)
     androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.onechannelcrm.assistive&hl=en_IN', // Example
-    iosLiveUrl: 'https://sagaranghan.com/', 
+    iosLiveUrl: 'https://sagaranghan.com/',
     duration: '18 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -45,7 +45,7 @@ export const projectsData: Project[] = [
     images: [
       'https://play-lh.googleusercontent.com/OVDQ_vaEx5FB3JCec0NPKpUucuGEaAxhGms51U1N26xF8O6euKog72m35VRy9kfXVJU=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/gICXMiSCR-hUMnKI9slNg1EzW4odlu0UtQgUxrVOZQvmGBYrOd4KE09bYgbrDjHjWes=w1052-h592-rw',
-      'https://play-lh.googleusercontent.com/KoNDi1YFXuQNlM5OrG3rAIeY6nHEZPIZV-pZ_cXBcIq8xJC9X0y6wGbAp5_ipNPLoWI=w1052-h592-rw', 
+      'https://play-lh.googleusercontent.com/KoNDi1YFXuQNlM5OrG3rAIeY6nHEZPIZV-pZ_cXBcIq8xJC9X0y6wGbAp5_ipNPLoWI=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/BDdUWO9wTEf3YxWGA24_ndtPk7e_8jFGvLKlY8sQYe0bkc2pVLLPG-vElH54e8QK7CAn=w1052-h592-rw'// Added third image
     ],
     imageHint: 'grocery app interface',
@@ -107,8 +107,8 @@ export const projectsData: Project[] = [
     imageHint: 'chat interface messages',
     technologies: ['Flutter', 'Firebase Firestore', 'Firebase Auth'],
     projectUrl: '#',
-    androidLiveUrl: '#',
-    iosLiveUrl: '#',
+    androidLiveUrl: 'https://sagaranghan.com/',
+    iosLiveUrl: 'https://sagaranghan.com/',
     duration: '4 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -127,8 +127,22 @@ export default function ProjectsSection() {
   const displayedProjects = projectsData.slice(0, 3); // Show only first 3 projects
 
   return (
-    <section id="projects" className="bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="bg-background relative overflow-hidden">
+      {/* Background Decorative Icons */}
+      <Layers
+        className="absolute -top-10 -left-10 h-64 w-64 text-primary/10 transform -rotate-12 opacity-30 pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <Target
+        className="absolute -bottom-12 -right-12 h-72 w-72 text-accent/10 transform rotate-[30deg] opacity-30 pointer-events-none z-0"
+        aria-hidden="true"
+      />
+       <Flame
+        className="hidden md:block absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 h-80 w-80 text-primary/5 opacity-20 rotate-[15deg] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
           Featured Projects
         </h2>
@@ -218,4 +232,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-
