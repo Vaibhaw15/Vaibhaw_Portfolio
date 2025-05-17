@@ -20,11 +20,11 @@ export default function HomePage() {
 
       <section className="bg-background relative overflow-hidden">
         <Flame
-            className="absolute top-1/2 right-10 h-56 w-56 text-primary/10 opacity-30 transform -translate-y-1/2 rotate-[10deg] pointer-events-none z-0 hidden lg:block"
+            className="absolute top-1/2 right-10 h-56 w-56 text-primary/10 opacity-50 transform -translate-y-1/2 rotate-[10deg] pointer-events-none z-0 hidden lg:block"
             aria-hidden="true"
         />
         <Layers
-            className="absolute bottom-0 left-5 h-48 w-48 text-accent/10 opacity-30 transform translate-y-1/4 -rotate-[5deg] pointer-events-none z-0 hidden md:block"
+            className="absolute bottom-0 left-5 h-48 w-48 text-accent/10 opacity-50 transform translate-y-1/4 -rotate-[5deg] pointer-events-none z-0 hidden md:block"
             aria-hidden="true"
         />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

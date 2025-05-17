@@ -48,11 +48,11 @@ export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="bg-background py-12 md:py-16 lg:py-20 relative overflow-hidden">
       <Layers
-        className="absolute top-1/4 left-1/4 h-48 w-48 text-primary/10 opacity-30 transform -translate-x-1/2 -translate-y-1/2 rotate-12 pointer-events-none z-0"
+        className="absolute top-1/4 left-1/4 h-48 w-48 text-primary/10 opacity-50 transform -translate-x-1/2 -translate-y-1/2 rotate-12 pointer-events-none z-0"
         aria-hidden="true"
       />
       <Target
-        className="hidden sm:block absolute bottom-1/3 right-1/4 h-40 w-40 text-accent/10 opacity-30 transform translate-x-1/2 translate-y-1/2 -rotate-[25deg] pointer-events-none z-0"
+        className="hidden sm:block absolute bottom-1/3 right-1/4 h-40 w-40 text-accent/10 opacity-50 transform translate-x-1/2 translate-y-1/2 -rotate-[25deg] pointer-events-none z-0"
         aria-hidden="true"
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

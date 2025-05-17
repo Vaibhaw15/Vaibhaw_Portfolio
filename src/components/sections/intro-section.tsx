@@ -2,6 +2,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Download, Briefcase, Layers, Target, Flame } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -13,7 +14,7 @@ export default function IntroSection() {
   const [animatedExpertise, setAnimatedExpertise] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150); // Initial delay
+  const [loopDelay, setLoopDelay] = useState(150); 
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -58,7 +59,7 @@ export default function IntroSection() {
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 530); // Standard cursor blink rate
+    }, 530); 
     return () => clearInterval(cursorInterval);
   }, []);
 
@@ -70,15 +71,15 @@ export default function IntroSection() {
     >
       {/* Decorative Background Icons */}
       <Layers
-        className="absolute top-10 left-5 md:left-10 h-32 w-32 sm:h-40 sm:w-40 text-primary/10 opacity-30 transform -rotate-12 pointer-events-none z-0"
+        className="absolute top-10 left-5 md:left-10 h-32 w-32 sm:h-40 sm:w-40 text-primary/10 opacity-50 transform -rotate-12 pointer-events-none z-0"
         aria-hidden="true"
       />
       <Target
-        className="absolute bottom-8 right-5 md:right-10 h-28 w-28 sm:h-32 sm:w-32 text-accent/10 opacity-30 transform rotate-[25deg] pointer-events-none z-0"
+        className="absolute bottom-8 right-5 md:right-10 h-28 w-28 sm:h-32 sm:w-32 text-accent/10 opacity-50 transform rotate-[25deg] pointer-events-none z-0"
         aria-hidden="true"
       />
        <Flame
-        className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-36 w-36 text-muted-foreground/10 opacity-20 rotate-[5deg] pointer-events-none z-0"
+        className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-36 w-36 text-muted-foreground/10 opacity-40 rotate-[5deg] pointer-events-none z-0"
         aria-hidden="true"
       />
 

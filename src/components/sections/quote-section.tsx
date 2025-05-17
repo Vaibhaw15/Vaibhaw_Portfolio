@@ -6,11 +6,11 @@ export default function QuoteSection() {
   return (
     <section id="personal-philosophy" className="py-6 md:py-8 lg:py-10 bg-secondary relative overflow-hidden">
        <Layers
-        className="absolute top-1/4 left-10 h-24 w-24 text-primary/10 opacity-30 transform -rotate-[15deg] pointer-events-none z-0"
+        className="absolute top-1/4 left-10 h-24 w-24 text-primary/10 opacity-50 transform -rotate-[15deg] pointer-events-none z-0"
         aria-hidden="true"
       />
       <Target
-        className="absolute bottom-1/4 right-10 h-20 w-20 text-accent/10 opacity-30 transform rotate-[30deg] pointer-events-none z-0"
+        className="absolute bottom-1/4 right-10 h-20 w-20 text-accent/10 opacity-50 transform rotate-[30deg] pointer-events-none z-0"
         aria-hidden="true"
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

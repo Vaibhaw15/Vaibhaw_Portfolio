@@ -129,15 +129,15 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="bg-background relative overflow-hidden">
       <Layers
-        className="absolute -top-16 -left-16 h-72 w-72 text-primary/10 opacity-30 transform -rotate-12 pointer-events-none z-0"
+        className="absolute -top-16 -left-16 h-72 w-72 text-primary/10 opacity-50 transform -rotate-12 pointer-events-none z-0"
         aria-hidden="true"
       />
       <Target
-        className="absolute -bottom-20 -right-20 h-80 w-80 text-accent/10 opacity-30 transform rotate-[30deg] pointer-events-none z-0"
+        className="absolute -bottom-20 -right-20 h-80 w-80 text-accent/10 opacity-50 transform rotate-[30deg] pointer-events-none z-0"
         aria-hidden="true"
       />
        <Flame
-        className="hidden md:block absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 h-96 w-96 text-primary/5 opacity-20 rotate-[15deg] pointer-events-none z-0"
+        className="hidden md:block absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 h-96 w-96 text-primary/10 opacity-50 rotate-[15deg] pointer-events-none z-0"
         aria-hidden="true"
       />
 

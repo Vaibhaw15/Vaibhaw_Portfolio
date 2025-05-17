@@ -54,11 +54,11 @@ export default function ExperienceEducationSection() {
   return (
     <section id="experience" className="bg-secondary relative overflow-hidden">
       <Layers
-        className="absolute top-20 -left-20 h-64 w-64 text-primary/10 opacity-30 transform rotate-12 pointer-events-none z-0"
+        className="absolute top-20 -left-20 h-64 w-64 text-primary/10 opacity-50 transform rotate-12 pointer-events-none z-0"
         aria-hidden="true"
       />
       <Flame
-        className="absolute bottom-10 -right-10 h-72 w-72 text-accent/10 opacity-30 transform -rotate-[20deg] pointer-events-none z-0"
+        className="absolute bottom-10 -right-10 h-72 w-72 text-accent/10 opacity-50 transform -rotate-[20deg] pointer-events-none z-0"
         aria-hidden="true"
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
