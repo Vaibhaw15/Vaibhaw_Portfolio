@@ -18,8 +18,8 @@ body {
     --popover: 0 0% 100%; /* White */
     --popover-foreground: 271 60% 20%; /* Dark purple */
 
-    --primary: 271 100% 25.3%; /* Deep Purple #4B0082 */
-    --primary-foreground: 240 100% 97%; /* Very light Lavender/almost white */
+    --primary: 210 80% 55%; /* Clear, medium-light blue */
+    --primary-foreground: 240 100% 97%; /* Very light Lavender/almost white (for text on primary bg) */
 
     --secondary: 240 60% 96%; /* Slightly less saturated lavender for section backgrounds */
     --secondary-foreground: 271 70% 28%; /* Darker purple for text on secondary */
@@ -27,22 +27,22 @@ body {
     --muted: 240 50% 93%; /* Softer, grayer lavender for muted backgrounds/elements */
     --muted-foreground: 271 40% 45%; /* Softer purple for text on muted */
 
-    --accent: 180 100% 25.1%; /* Teal #008080 */
-    --accent-foreground: 180 100% 95%; /* Very light/white */
+    --accent: 180 75% 50%; /* Brighter, medium-light teal */
+    --accent-foreground: 180 100% 95%; /* Very light/white (for text on accent bg) */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 30% 90%; /* Softer lavender-ish border */
     --input: 240 30% 95%; /* Lighter lavender-ish input background */
-    --ring: 180 100% 30%; /* Slightly lighter Teal for focus rings */
+    --ring: 180 70% 45%; /* Lighter Teal for focus rings */
 
     --radius: 0.5rem;
 
     /* Chart colors - can be adjusted if charts are used */
     --chart-1: var(--primary);
     --chart-2: var(--accent);
-    --chart-3: 240 66.7% 85%; 
+    --chart-3: 240 66.7% 85%;
     --chart-4: 271 70% 50%;
     --chart-5: 180 70% 50%;
 
@@ -62,13 +62,13 @@ body {
     --foreground: 210 40% 98%; /* Very light grey, almost white */
 
     --card: 222 84% 9.0%; /* Slightly lighter navy for cards */
-    --card-foreground: 210 40% 98%; 
+    --card-foreground: 210 40% 98%;
 
     --popover: 222 84% 8.0%; /* Slightly darker than card for depth */
     --popover-foreground: 210 40% 98%;
 
-    --primary: 263.4 70.0% 50.4%; /* Vibrant, slightly lighter purple */
-    --primary-foreground: 210 40% 98%; /* Light text on primary */
+    --primary: 210 90% 68%; /* Light, vibrant sky blue (for text) */
+    --primary-foreground: 210 25% 10%; /* Dark blue for high contrast (text on primary bg) */
 
     --secondary: 222 84% 12.0%; /* A slightly lighter shade for section backgrounds, distinct from card */
     --secondary-foreground: 210 40% 90%; /* Slightly less bright text for secondary sections */
@@ -76,20 +76,20 @@ body {
     --muted: 222 84% 15.0%; /* Muted navy for subtle elements */
     --muted-foreground: 210 40% 65%; /* Softer text for muted elements */
 
-    --accent: 340 95% 65%; /* Vibrant pink/magenta */
+    --accent: 340 95% 65%; /* Vibrant pink/magenta (remains for accent text) */
     --accent-foreground: 210 40% 98%; /* Light text on accent */
 
-    --destructive: 0 62.8% 30.6%; 
-    --destructive-foreground: 0 0% 98%; 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
     --border: 222 84% 15.0%; /* Subtle border, same as muted bg */
     --input: 222 84% 15.0%; /* Input background, distinct but dark */
-    --ring: 263.4 70.0% 55.4%; /* Slightly lighter primary for focus rings */
+    --ring: 210 90% 60%; /* Lighter primary for focus rings */
 
     /* Chart colors - dark theme */
-    --chart-1: var(--primary); 
-    --chart-2: var(--accent); 
-    --chart-3: 220 20% 50%; 
+    --chart-1: var(--primary);
+    --chart-2: var(--accent);
+    --chart-3: 220 20% 50%;
     --chart-4: 265 50% 60%; /* Adjusted to purple family */
     --chart-5: 340 60% 50%; /* Adjusted to new accent family */
 
