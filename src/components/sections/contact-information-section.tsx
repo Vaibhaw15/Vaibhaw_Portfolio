@@ -1,8 +1,12 @@
 
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const contactDetails = [
   {
@@ -21,26 +25,61 @@ const contactDetails = [
     icon: MapPin,
     label: 'Location',
     value: 'Kolkata, India',
-    href: '#', // No direct link for location usually, or could be a map link
+    href: '#',
   },
 ];
 
 const socialLinks = [
   {
-    href: 'https://github.com/Vaibhaw15', 
+    href: 'https://github.com/Vaibhaw15',
     icon: Github,
     label: 'GitHub',
   },
   {
-    href: 'https://www.linkedin.com/in/vaibhawsoni15/', 
+    href: 'https://www.linkedin.com/in/vaibhawsoni15/',
     icon: Linkedin,
     label: 'LinkedIn',
   },
 ];
 
 export default function ContactInformationSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = cardRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false); // Reset when out of view
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(element);
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
   return (
-    <Card id="contact-info" className="w-full shadow-lg rounded-lg">
+    <Card
+      id="contact-info"
+      ref={cardRef}
+      className={cn(
+        'w-full shadow-lg rounded-lg scroll-animated-item',
+        isVisible ? 'slide-from-left-active' : 'slide-from-left-initial'
+      )}
+    >
       <CardHeader className="text-center">
         <CardTitle className="text-3xl md:text-4xl text-primary">Contact Information</CardTitle>
       </CardHeader>

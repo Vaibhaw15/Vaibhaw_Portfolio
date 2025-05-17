@@ -1,8 +1,12 @@
 
+"use client";
+
 import type { WorkExperienceItem, EducationItem } from '@/lib/types';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Briefcase, GraduationCap, Layers, Target, Flame } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
+import AnimatedWorkExperienceCard from './AnimatedWorkExperienceCard';
+import AnimatedEducationCard from './AnimatedEducationCard';
 
 const workExperienceData: WorkExperienceItem[] = [
   {
@@ -51,6 +55,34 @@ const educationData: EducationItem[] = [
 ];
 
 export default function ExperienceEducationSection() {
+  const [isTitleVisible, setTitleVisible] = useState(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const element = titleRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTitleVisible(true);
+          } else {
+            setTitleVisible(false); // Reset when out of view
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(element);
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
   return (
     <section id="experience" className="bg-secondary relative overflow-hidden">
       <Layers
@@ -63,7 +95,15 @@ export default function ExperienceEducationSection() {
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">Experience & Education</h2>
+          <h2
+            ref={titleRef}
+            className={cn(
+              'text-3xl md:text-4xl font-bold text-primary scroll-animated-item',
+              isTitleVisible ? 'slide-from-left-active' : 'slide-from-left-initial'
+            )}
+          >
+            Experience & Education
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
             My professional journey and educational background that have shaped my career.
           </p>
@@ -77,36 +117,8 @@ export default function ExperienceEducationSection() {
               Work Experience
             </h3>
             <div className="relative space-y-10 pl-6 before:absolute before:inset-y-0 before:left-0 before:w-0.5 before:bg-border before:hidden sm:before:block">
-              {workExperienceData.map((exp) => (
-                <div key={exp.id} className="relative">
-                  <div className="absolute -left-[calc(0.75rem+2px)] top-1.5 w-3.5 h-3.5 bg-primary rounded-full border-4 border-secondary hidden sm:block"></div>
-                  <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader>
-                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                        <CardTitle className="text-xl text-foreground">{exp.title}</CardTitle>
-                        <Badge variant="secondary" className="text-xs whitespace-nowrap">{exp.dateRange}</Badge>
-                      </div>
-                      <p className="text-md text-accent">{exp.company}</p>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
-                        {exp.descriptionPoints.map((point, i) => (
-                          <li key={i}>{point}</li>
-                        ))}
-                      </ul>
-                      {exp.skills.length > 0 && (
-                        <div className="mt-4 pt-4 border-t">
-                          <h4 className="text-sm font-semibold text-foreground mb-2">Key Skills:</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.skills.map(skill => (
-                              <Badge key={skill} variant="outline" className="text-xs">{skill}</Badge>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </CardContent>
-                  </Card>
-                </div>
+              {workExperienceData.map((exp, index) => (
+                <AnimatedWorkExperienceCard key={exp.id} experience={exp} index={index} />
               ))}
             </div>
           </div>
@@ -117,22 +129,8 @@ export default function ExperienceEducationSection() {
               Education
             </h3>
             <div className="relative space-y-10 pl-6 before:absolute before:inset-y-0 before:left-0 before:w-0.5 before:bg-border before:hidden sm:before:block">
-              {educationData.map((edu) => (
-                <div key={edu.id} className="relative">
-                  <div className="absolute -left-[calc(0.75rem+2px)] top-1.5 w-3.5 h-3.5 bg-primary rounded-full border-4 border-secondary hidden sm:block"></div>
-                  <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader>
-                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                        <CardTitle className="text-xl text-foreground">{edu.degree}</CardTitle>
-                        <Badge variant="secondary" className="text-xs whitespace-nowrap">{edu.year}</Badge>
-                      </div>
-                      <p className="text-md text-accent">{edu.institution}</p>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">{edu.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
+              {educationData.map((edu, index) => (
+                <AnimatedEducationCard key={edu.id} education={edu} index={index} />
               ))}
             </div>
           </div>
