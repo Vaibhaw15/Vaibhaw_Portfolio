@@ -9,7 +9,7 @@ export default function QuoteSection() {
         <Card className="max-w-5xl mx-auto shadow-lg rounded-lg">
           <CardContent className="p-6 md:p-8 relative">
             <QuoteIcon
-              className="absolute top-4 left-4 md:top-6 md:left-6 h-12 w-12 md:h-16 md:w-16 text-primary opacity-20"
+              className="absolute top-4 left-4 md:top-6 md:left-6 h-12 w-12 md:h-16 md:w-16 text-primary opacity-30"
               aria-hidden="true"
             />
             <blockquote className="text-center">
@@ -18,7 +18,7 @@ export default function QuoteSection() {
               </p>
             </blockquote>
             <QuoteIcon
-              className="absolute bottom-4 right-4 md:bottom-6 md:right-6 h-12 w-12 md:h-16 md:w-16 text-primary opacity-20 transform rotate-180"
+              className="absolute bottom-4 right-4 md:bottom-6 md:right-6 h-12 w-12 md:h-16 md:w-16 text-primary opacity-30 transform rotate-180"
               aria-hidden="true"
             />
           </CardContent>
