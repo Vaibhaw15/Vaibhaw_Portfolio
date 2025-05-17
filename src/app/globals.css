@@ -21,11 +21,11 @@ body {
     --primary: 271 100% 25.3%; /* Deep Purple #4B0082 */
     --primary-foreground: 240 100% 97%; /* Very light Lavender/almost white */
 
-    --secondary: 240 66.7% 94.1%; /* Lavender #E6E6FA */
-    --secondary-foreground: 271 100% 25.3%; /* Deep Purple */
+    --secondary: 240 60% 96%; /* Slightly less saturated lavender for section backgrounds */
+    --secondary-foreground: 271 70% 28%; /* Darker purple for text on secondary */
 
-    --muted: 240 60% 90%; /* Lighter Lavender */
-    --muted-foreground: 271 50% 40%; /* Muted purple */
+    --muted: 240 50% 93%; /* Softer, grayer lavender for muted backgrounds/elements */
+    --muted-foreground: 271 40% 45%; /* Softer purple for text on muted */
 
     --accent: 180 100% 25.1%; /* Teal #008080 */
     --accent-foreground: 180 100% 95%; /* Very light/white */
@@ -33,75 +33,75 @@ body {
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 40% 88%; /* Lavender-ish border */
-    --input: 240 40% 92%; /* Lavender-ish input background */
+    --border: 240 30% 90%; /* Softer lavender-ish border */
+    --input: 240 30% 95%; /* Lighter lavender-ish input background */
     --ring: 180 100% 30%; /* Slightly lighter Teal for focus rings */
 
     --radius: 0.5rem;
 
     /* Chart colors - can be adjusted if charts are used */
-    --chart-1: 271 100% 25.3%; /* Primary */
-    --chart-2: 180 100% 25.1%; /* Accent */
-    --chart-3: 240 66.7% 85%; /* Lighter Lavender */
-    --chart-4: 271 70% 50%; 
+    --chart-1: var(--primary);
+    --chart-2: var(--accent);
+    --chart-3: 240 66.7% 85%; 
+    --chart-4: 271 70% 50%;
     --chart-5: 180 70% 50%;
 
-    /* Sidebar specific colors - updated to match theme */
-    --sidebar-background: 240 80% 97%; /* Lighter Lavender variant */
-    --sidebar-foreground: 271 60% 20%; /* Dark Purple */
-    --sidebar-primary: 271 100% 25.3%; /* Deep Purple */
-    --sidebar-primary-foreground: 240 100% 97%; /* Light Lavender */
-    --sidebar-accent: 180 100% 25.1%; /* Teal */
-    --sidebar-accent-foreground: 180 100% 95%; /* Light Teal Text */
-    --sidebar-border: 240 40% 88%; /* Lavender-ish border */
-    --sidebar-ring: 180 100% 30%; /* Teal */
+    /* Sidebar specific colors - light theme */
+    --sidebar-background: 240 80% 97%; /* Light Lavender variant, distinct */
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: 240 40% 90%; /* Consistent with main border or slightly different */
+    --sidebar-ring: var(--ring);
   }
 
   .dark {
-    --background: 271 25% 8%; /* Very dark purple */
-    --foreground: 240 50% 92%; /* Light lavender/gray */
+    --background: 224 71% 4%; /* Very dark navy, almost black */
+    --foreground: 210 20% 98%; /* Very light grey, almost white */
 
-    --card: 271 25% 12%; /* Slightly lighter dark purple for cards */
-    --card-foreground: 240 50% 92%;
+    --card: 224 71% 9%; /* Slightly lighter navy for cards */
+    --card-foreground: 210 20% 98%; 
 
-    --popover: 271 25% 8%;
-    --popover-foreground: 240 50% 92%;
+    --popover: 224 71% 8%; /* Slightly darker than card for depth */
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 240 67% 85%; /* Brighter Lavender for primary actions */
-    --primary-foreground: 271 100% 25.3%; /* Deep Purple */
+    --primary: 265 89% 70%; /* Vibrant, slightly lighter purple */
+    --primary-foreground: 210 20% 98%; /* Light text on primary */
 
-    --secondary: 271 30% 20%; /* Darker purple */
-    --secondary-foreground: 240 50% 88%; /* Slightly dimmer light lavender */
+    --secondary: 224 71% 12%; /* A slightly lighter shade for section backgrounds, distinct from card */
+    --secondary-foreground: 210 20% 90%; /* Slightly less bright text for secondary sections */
 
-    --muted: 271 20% 25%; /* Dark muted purple */
-    --muted-foreground: 240 30% 70%; /* Muted light text */
+    --muted: 224 71% 15%; /* Muted navy for subtle elements */
+    --muted-foreground: 210 20% 65%; /* Softer text for muted elements */
 
-    --accent: 180 70% 55%; /* Brighter Teal */
-    --accent-foreground: 271 100% 10%; /* Very dark purple/black */
+    --accent: 340 95% 65%; /* Vibrant pink/magenta */
+    --accent-foreground: 210 20% 98%; /* Light text on accent */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 55%; 
+    --destructive-foreground: 0 0% 100%; 
 
-    --border: 271 20% 28%; /* Dark purple border */
-    --input: 271 20% 30%; /* Dark purple input background */
-    --ring: 180 70% 60%; /* Bright Teal for focus rings */
-    
+    --border: 224 71% 15%; /* Subtle border, same as muted bg */
+    --input: 224 71% 15%; /* Input background, distinct but dark */
+    --ring: 265 89% 75%; /* Slightly lighter primary for focus rings */
+
     /* Chart colors - dark theme */
-    --chart-1: 240 67% 85%; /* Primary (dark theme) */
-    --chart-2: 180 70% 55%; /* Accent (dark theme) */
-    --chart-3: 271 30% 40%; 
-    --chart-4: 240 50% 70%;
-    --chart-5: 180 50% 70%;
+    --chart-1: var(--primary); 
+    --chart-2: var(--accent); 
+    --chart-3: 220 20% 50%; 
+    --chart-4: 265 50% 60%; /* Adjusted to purple family */
+    --chart-5: 340 60% 50%; /* Adjusted to new accent family */
 
     /* Sidebar specific colors - dark theme */
-    --sidebar-background: 271 25% 10%; /* Darker Purple variant */
-    --sidebar-foreground: 240 50% 92%; /* Light Lavender */
-    --sidebar-primary: 240 67% 85%; /* Light Lavender (primary interactive) */
-    --sidebar-primary-foreground: 271 100% 25.3%; /* Deep Purple */
-    --sidebar-accent: 180 70% 55%; /* Bright Teal */
-    --sidebar-accent-foreground: 271 100% 10%; /* Dark Purple */
-    --sidebar-border: 271 20% 28%;
-    --sidebar-ring: 180 70% 60%;
+    --sidebar-background: 224 71% 7%; /* Distinct from main background and cards */
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: 224 71% 12%; /* Border for sidebar internal elements */
+    --sidebar-ring: var(--ring);
   }
 }
 
@@ -130,4 +130,3 @@ body {
     100% { transform: translateX(-50%); } /* Scrolls one full set of duplicated items */
   }
 }
-

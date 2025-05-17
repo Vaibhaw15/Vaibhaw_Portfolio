@@ -6,6 +6,7 @@ import ExperienceEducationSection from '@/components/sections/experience-educati
 import TestimonialsSection from '@/components/sections/testimonials-section';
 import ContactInformationSection from '@/components/sections/contact-information-section';
 import ContactSection from '@/components/sections/contact-section';
+import { Layers, Target, Flame } from 'lucide-react';
 
 
 export default function HomePage() {
@@ -17,9 +18,16 @@ export default function HomePage() {
       <ExperienceEducationSection />
       <TestimonialsSection />
 
-      {/* Combined Contact Row */}
-      <section className="bg-background"> {/* Ensure alternating background and default section padding */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-secondary relative overflow-hidden">
+        <Flame
+            className="absolute top-1/2 right-10 h-56 w-56 text-primary/10 opacity-50 transform -translate-y-1/2 rotate-[10deg] pointer-events-none z-0 hidden lg:block"
+            aria-hidden="true"
+        />
+        <Layers
+            className="absolute bottom-0 left-5 h-48 w-48 text-accent/10 opacity-50 transform translate-y-1/4 -rotate-[5deg] pointer-events-none z-0 hidden md:block"
+            aria-hidden="true"
+        />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
             <p className="mt-4 text-lg text-muted-foreground">

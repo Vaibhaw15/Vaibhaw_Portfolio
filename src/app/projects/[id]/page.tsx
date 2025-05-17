@@ -9,7 +9,7 @@ import { projectsData } from '@/components/sections/projects-section';
 import type { Project } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, CalendarDays, UserCircle2 as UserIcon } from 'lucide-react'; // Changed User to UserCircle2 for better visual
+import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, CalendarDays, UserCircle2 as UserIcon, Layers, Target, Flame } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function ProjectDetailPage() {
@@ -76,8 +76,21 @@ export default function ProjectDetailPage() {
   };
 
   return (
-    <section className="py-8 md:py-12 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-8 md:py-12 bg-background relative overflow-hidden">
+       <Layers
+        className="absolute -top-8 -left-12 h-64 w-64 text-primary/10 opacity-50 transform -rotate-12 pointer-events-none z-0 hidden lg:block"
+        aria-hidden="true"
+      />
+      <Target
+        className="absolute bottom-1/4 right-5 h-56 w-56 text-accent/10 opacity-50 transform rotate-[25deg] pointer-events-none z-0 hidden md:block"
+        aria-hidden="true"
+      />
+      <Flame
+        className="absolute top-1/3 -right-10 h-72 w-72 text-primary/10 opacity-50 transform rotate-[10deg] pointer-events-none z-0 hidden lg:block"
+        aria-hidden="true"
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-8">
           <Button variant="outline" asChild className="text-sm hover:bg-muted/80">
             <Link href="/#projects">

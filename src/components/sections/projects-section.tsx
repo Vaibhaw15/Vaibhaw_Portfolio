@@ -5,16 +5,16 @@ import type { Project } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Layers, Target, Flame } from 'lucide-react';
 
 export const projectsData: Project[] = [
   {
     id: '1',
     title: '1Channel CRM',
     description: 'This app helps businesses store and manage customer information in one place. It allows users to track leads, monitor sales, and improve customer interactions.\n\nThe app includes important features such as user management, where businesses can add team members and assign roles. It also has lead tracking, which helps businesses follow up with potential customers. Custom dashboards show sales performance in an easy-to-understand way, helping businesses make better decisions.\n\nAnother key feature is real-time notifications, which keep users updated on important activities like new leads, sales updates, or customer interactions. The goal of this app is to provide a simple and effective way for businesses to manage their customers and grow their sales.',
-    imageUrl: 'https://play-lh.googleusercontent.com/3ToisVJsNVlEvmPEACTvmZvVswOf5AChrOc-TuKHiy6sYJWh-V9RLx5FYENNKKma5V4=w1052-h592-rw', // Card preview image
-    images: [ // Gallery images for detail page
-      'https://play-lh.googleusercontent.com/ArCPkw-6nSITNrB5qj61KDF48xyuBv7LkX5gjYt6cDGCMjz7Xsy2Htks2xJSfAXspxA=w1052-h592-rw', // Main display for detail
+    imageUrl: 'https://play-lh.googleusercontent.com/3ToisVJsNVlEvmPEACTvmZvVswOf5AChrOc-TuKHiy6sYJWh-V9RLx5FYENNKKma5V4=w1052-h592-rw', 
+    images: [ 
+      'https://play-lh.googleusercontent.com/ArCPkw-6nSITNrB5qj61KDF48xyuBv7LkX5gjYt6cDGCMjz7Xsy2Htks2xJSfAXspxA=w1052-h592-rw', 
       'https://play-lh.googleusercontent.com/3ToisVJsNVlEvmPEACTvmZvVswOf5AChrOc-TuKHiy6sYJWh-V9RLx5FYENNKKma5V4=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/cyF5QFy9IHUFhK9_0pUZBr-f6iRkMQe_rW5fXokZbVtLUU0L12ztQe8y5_FGR0ML-2qb=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/ommeYuHEQY-IpbR9j6q8YwOlmTIiEV7293A4Erd_NOXIcFJOo-seMMu3FEHNQDQLpmw=w1052-h592-rw',
@@ -23,9 +23,9 @@ export const projectsData: Project[] = [
     ],
     imageHint: 'mobile app portfolio',
     technologies: ['Flutter', 'Dart', 'Firebase','BLoC','Crashlytics','Push Notification','SQLite'],
-    projectUrl: '#', // General project link (e.g. GitHub repo if public)
-    androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.onechannelcrm.assistive&hl=en_IN', // Example
-    iosLiveUrl: 'https://sagaranghan.com/', 
+    projectUrl: '#', 
+    androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.onechannelcrm.assistive&hl=en_IN', 
+    iosLiveUrl: 'https://sagaranghan.com/',
     duration: '18 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -41,12 +41,12 @@ export const projectsData: Project[] = [
     id: '2',
     title: 'RC Start',
     description: 'The Royal Canin Start application is designed for Royal Canin’s retailers and customers. It serves as a platform to recruit young pet parents and guide them through the early stages of pet parenthood. The app offers tailored nutritional guidance for young pets, helping ensure their healthy growth.\n\nRetailers and customers can use the app to share useful insights, educate new pet owners, and provide personalized pet care recommendations. In return, they earn incentives for successful recruitments. The goal of the app is to strengthen customer engagement while promoting responsible and informed pet parenting with Royal Canin’s expert support.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: 'https://play-lh.googleusercontent.com/OVDQ_vaEx5FB3JCec0NPKpUucuGEaAxhGms51U1N26xF8O6euKog72m35VRy9kfXVJU=w1052-h592-rw',
     images: [
       'https://play-lh.googleusercontent.com/OVDQ_vaEx5FB3JCec0NPKpUucuGEaAxhGms51U1N26xF8O6euKog72m35VRy9kfXVJU=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/gICXMiSCR-hUMnKI9slNg1EzW4odlu0UtQgUxrVOZQvmGBYrOd4KE09bYgbrDjHjWes=w1052-h592-rw',
-      'https://play-lh.googleusercontent.com/KoNDi1YFXuQNlM5OrG3rAIeY6nHEZPIZV-pZ_cXBcIq8xJC9X0y6wGbAp5_ipNPLoWI=w1052-h592-rw', 
-      'https://play-lh.googleusercontent.com/BDdUWO9wTEf3YxWGA24_ndtPk7e_8jFGvLKlY8sQYe0bkc2pVLLPG-vElH54e8QK7CAn=w1052-h592-rw'// Added third image
+      'https://play-lh.googleusercontent.com/KoNDi1YFXuQNlM5OrG3rAIeY6nHEZPIZV-pZ_cXBcIq8xJC9X0y6wGbAp5_ipNPLoWI=w1052-h592-rw',
+      'https://play-lh.googleusercontent.com/BDdUWO9wTEf3YxWGA24_ndtPk7e_8jFGvLKlY8sQYe0bkc2pVLLPG-vElH54e8QK7CAn=w1052-h592-rw'
     ],
     imageHint: 'grocery app interface',
     technologies: ['Flutter','Dart','BLoC', 'Firebase', 'Push Notification','SQLite'],
@@ -71,11 +71,11 @@ export const projectsData: Project[] = [
     id: '3',
     title: 'Crompton SAATHI',
     description: 'Crompton SAATHI App is developed for professionals like plumbers, borers, and electricians. The app empowers users to earn and manage reward points for every installation of Crompton pumps. These points can be easily redeemed by transferring them directly to Paytm or GPay accounts.\n\nSaathi simplifies the reward tracking process, helping users stay updated on their earnings, manage their transactions, and benefit from their association with Crompton in a seamless and rewarding way.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: 'https://play-lh.googleusercontent.com/8IiRG9l6QCmwqQoiUM9wVPdGzATmKaPTMoMoXB3jhIh0XsB9eALFhZVFT-VTmkpAydw=w1052-h592-rw',
     images: [
       'https://play-lh.googleusercontent.com/8IiRG9l6QCmwqQoiUM9wVPdGzATmKaPTMoMoXB3jhIh0XsB9eALFhZVFT-VTmkpAydw=w1052-h592-rw',
       'https://play-lh.googleusercontent.com/dVykGt2Fi0sqUxRIVASIsxe19QV-ElcJVfvbzZkB9_sHob1IRAjp3lB-fCsEesl7_lo=w1052-h592-rw',
-      'https://play-lh.googleusercontent.com/FdnQuxmWi9BEA2sSrfW1yH1FpyPSEcK5qx9GIJ3jpX8GTQm2m2fzt8Fh7VTTiAUXMQ=w1052-h592-rw', // Added third image
+      'https://play-lh.googleusercontent.com/FdnQuxmWi9BEA2sSrfW1yH1FpyPSEcK5qx9GIJ3jpX8GTQm2m2fzt8Fh7VTTiAUXMQ=w1052-h592-rw',
     ],
     imageHint: 'task list productivity',
     technologies: ['Flutter', 'Dart','BLoC', 'SQLite','Push Notification'],
@@ -101,14 +101,14 @@ export const projectsData: Project[] = [
     imageUrl: 'https://placehold.co/600x400.png',
     images: [
       'https://placehold.co/800x600.png',
-      'https://placehold.co/400x300.png', // Placeholder second image
-      'https://placehold.co/400x300.png', // Placeholder third image
+      'https://placehold.co/400x300.png',
+      'https://placehold.co/400x300.png',
     ],
     imageHint: 'chat interface messages',
     technologies: ['Flutter', 'Firebase Firestore', 'Firebase Auth'],
     projectUrl: '#',
-    androidLiveUrl: '#',
-    iosLiveUrl: '#',
+    androidLiveUrl: 'https://sagaranghan.com/',
+    iosLiveUrl: 'https://sagaranghan.com/',
     duration: '4 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -124,11 +124,24 @@ export const projectsData: Project[] = [
 ];
 
 export default function ProjectsSection() {
-  const displayedProjects = projectsData.slice(0, 3); // Show only first 3 projects
+  const displayedProjects = projectsData.slice(0, 3);
 
   return (
-    <section id="projects" className="bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="bg-background relative overflow-hidden">
+      <Layers
+        className="absolute -top-16 -left-16 h-72 w-72 text-primary/10 opacity-50 transform -rotate-12 pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <Target
+        className="absolute -bottom-20 -right-20 h-80 w-80 text-accent/10 opacity-50 transform rotate-[30deg] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+       <Flame
+        className="hidden md:block absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 h-96 w-96 text-primary/10 opacity-50 rotate-[15deg] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
           Featured Projects
         </h2>
@@ -137,7 +150,6 @@ export default function ProjectsSection() {
             <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
               <Link href={`/projects/${project.id}`} className="flex flex-col group flex-grow">
                 <div className="relative w-full h-60 md:h-72 flex overflow-hidden">
-                  {/* Section 1 - Image 1 */}
                   <div className="relative w-1/3 h-full bg-muted/30">
                     <Image
                       src={(project.images && project.images.length > 0) ? project.images[0] : 'https://placehold.co/200x400.png'}
@@ -149,7 +161,6 @@ export default function ProjectsSection() {
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  {/* Section 2 - Image 2 */}
                   <div className="relative w-1/3 h-full bg-muted/30">
                     <Image
                       src={(project.images && project.images.length > 1) ? project.images[1] : 'https://placehold.co/200x400.png'}
@@ -161,7 +172,6 @@ export default function ProjectsSection() {
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  {/* Section 3 - Image 3 */}
                   <div className="relative w-1/3 h-full bg-muted/30">
                     <Image
                       src={(project.images && project.images.length > 2) ? project.images[2] : 'https://placehold.co/200x400.png'}
@@ -218,4 +228,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-
