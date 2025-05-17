@@ -26,7 +26,7 @@ export const projectsData: Project[] = [
     technologies: ['Flutter', 'Dart', 'Firebase', 'AWS', 'Razor Pay'],
     projectUrl: '#', // General project link (e.g. GitHub repo if public)
     androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.onechannelcrm.assistive&hl=en_IN', // Example
-    iosLiveUrl: 'https://sagaranghan.com/', // Updated to show iOS demo button
+    iosLiveUrl: 'https://sagaranghan.com/', 
     duration: '12 Months',
     role: 'Lead Developer',
     keyFeatures: [
@@ -49,6 +49,7 @@ export const projectsData: Project[] = [
     images: [
       'https://placehold.co/800x600.png',
       'https://placehold.co/400x300.png',
+      'https://placehold.co/400x300.png', // Added third image
     ],
     imageHint: 'grocery app interface',
     technologies: ['Flutter', 'Firebase', 'Stripe SDK'],
@@ -74,7 +75,7 @@ export const projectsData: Project[] = [
     images: [
       'https://placehold.co/800x600.png',
       'https://placehold.co/400x300.png',
-      'https://placehold.co/400x300.png',
+      'https://placehold.co/400x300.png', // Added third image
     ],
     imageHint: 'task list productivity',
     technologies: ['Flutter', 'Dart', 'SQLite'],
@@ -99,6 +100,8 @@ export const projectsData: Project[] = [
     imageUrl: 'https://placehold.co/600x400.png',
     images: [
       'https://placehold.co/800x600.png',
+      'https://placehold.co/400x300.png', // Placeholder second image
+      'https://placehold.co/400x300.png', // Placeholder third image
     ],
     imageHint: 'chat interface messages',
     technologies: ['Flutter', 'Firebase Firestore', 'Firebase Auth'],
@@ -133,26 +136,38 @@ export default function ProjectsSection() {
               <Link href={`/projects/${project.id}`} className="flex flex-col group flex-grow">
                 <div className="relative w-full h-60 md:h-72 flex overflow-hidden">
                   {/* Section 1 - Image 1 */}
-                  <div className="relative w-1/2 h-full bg-muted/30">
+                  <div className="relative w-1/3 h-full bg-muted/30">
                     <Image
-                      src={(project.images && project.images.length > 0) ? project.images[0] : 'https://placehold.co/300x400.png'}
+                      src={(project.images && project.images.length > 0) ? project.images[0] : 'https://placehold.co/200x400.png'}
                       alt={`${project.title} - Preview 1`}
                       fill
                       style={{ objectFit: 'contain' }}
-                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 17vw"
+                      sizes="(max-width: 768px) 33vw, (max-width: 1200px) 16vw, 11vw"
                       data-ai-hint={project.imageHint || "app screenshot"}
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   {/* Section 2 - Image 2 */}
-                  <div className="relative w-1/2 h-full border-l-2 border-card bg-muted/30">
+                  <div className="relative w-1/3 h-full bg-muted/30">
                     <Image
-                      src={(project.images && project.images.length > 1) ? project.images[1] : 'https://placehold.co/300x400.png'}
+                      src={(project.images && project.images.length > 1) ? project.images[1] : 'https://placehold.co/200x400.png'}
                       alt={`${project.title} - Preview 2`}
                       fill
                       style={{ objectFit: 'contain' }}
-                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 17vw"
+                      sizes="(max-width: 768px) 33vw, (max-width: 1200px) 16vw, 11vw"
                       data-ai-hint={project.imageHint ? project.imageHint.split(" ")[0] + " detail" : "app detail"}
+                      className="transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  {/* Section 3 - Image 3 */}
+                  <div className="relative w-1/3 h-full bg-muted/30">
+                    <Image
+                      src={(project.images && project.images.length > 2) ? project.images[2] : 'https://placehold.co/200x400.png'}
+                      alt={`${project.title} - Preview 3`}
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      sizes="(max-width: 768px) 33vw, (max-width: 1200px) 16vw, 11vw"
+                      data-ai-hint={project.imageHint ? project.imageHint.split(" ")[0] + " feature" : "app feature"}
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
@@ -201,3 +216,4 @@ export default function ProjectsSection() {
     </section>
   );
 }
+
