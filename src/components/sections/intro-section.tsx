@@ -2,6 +2,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image'; // Added import
 import { Button } from '@/components/ui/button';
 import { Download, Briefcase, Layers, Target, Flame } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -13,7 +14,7 @@ export default function IntroSection() {
   const [animatedExpertise, setAnimatedExpertise] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopDelay, setLoopDelay] = useState(150);
+  const [loopDelay, setLoopDelay] = useState(150); // Initial delay, will be updated
   const [showCursor, setShowCursor] = useState(true);
 
   const TYPING_SPEED = 150;
@@ -26,19 +27,23 @@ export default function IntroSection() {
 
     const handleTypingLoop = () => {
       if (!isDeleting) {
+        // Typing
         if (currentIndex < currentPhrase.length) {
           setAnimatedExpertise((prev) => prev + currentPhrase.charAt(currentIndex));
           setCurrentIndex((prev) => prev + 1);
           setLoopDelay(TYPING_SPEED);
         } else {
+          // Finished typing, pause then start deleting
           setLoopDelay(PAUSE_DURATION_AFTER_TYPING);
           setIsDeleting(true);
         }
       } else {
+        // Deleting
         if (animatedExpertise.length > 0) {
           setAnimatedExpertise((prev) => prev.substring(0, prev.length - 1));
           setLoopDelay(DELETING_SPEED);
         } else {
+          // Finished deleting, pause then switch to next phrase
           setIsDeleting(false);
           setCurrentIndex(0);
           setPhraseIndex((prev) => (prev + 1) % phrases.length);
@@ -50,13 +55,15 @@ export default function IntroSection() {
     const timeoutId = setTimeout(handleTypingLoop, loopDelay);
     return () => clearTimeout(timeoutId);
   }, [animatedExpertise, currentIndex, isDeleting, phraseIndex, loopDelay]);
-
+  
   useEffect(() => {
+    // Cursor blinking effect
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 530);
+    }, 530); // Standard cursor blink rate
     return () => clearInterval(cursorInterval);
   }, []);
+
 
   return (
     <section
@@ -79,15 +86,19 @@ export default function IntroSection() {
 
       {/* Main content container */}
       <div className="container mx-auto grid md:grid-cols-2 items-center rounded-lg px-4 sm:px-6 lg:px-8 relative">
+        
         {/* Profile Picture Area */}
         <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto my-8 md:my-0 rounded-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
-          <div className="absolute inset-0 rounded-full bg-background/10 backdrop-blur-sm pointer-events-none"></div>
-          <img
+          {/* <div className="absolute inset-0 rounded-full bg-background/10 backdrop-blur-sm pointer-events-none"></div> */} {/* Temporarily removed for debugging */}
+          <Image
             src="https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png"
             alt="Vaibhaw Soni - Professional Headshot"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            className="rounded-full transition-all duration-500"
+            fill
+            style={{ objectFit: 'cover' }}
+            className="transition-all duration-500"
+            sizes="(max-width: 768px) 16rem, (max-width: 1024px) 20rem, 24rem"
             data-ai-hint="professional portrait"
+            priority
           />
         </div>
 
@@ -97,7 +108,7 @@ export default function IntroSection() {
             <span className="block text-2xl md:text-3xl lg:text-4xl">Hi, I'm</span>
             <span className="block text-4xl md:text-5xl lg:text-6xl">Vaibhaw Soni</span>
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-accent mb-6 min-h-[1.5em]">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-accent mb-6 min-h-[1.5em]"> {/* min-h to prevent layout shift */}
             {animatedExpertise}
             {showCursor && <span className="animate-pulse ml-0.5 text-accent">|</span>}
           </p>
