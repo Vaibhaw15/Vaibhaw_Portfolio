@@ -53,8 +53,8 @@ export const projectsData: Project[] = [
     imageHint: 'grocery app interface',
     technologies: ['Flutter', 'Firebase', 'Stripe SDK'],
     projectUrl: '#',
-    androidLiveUrl: 'https://sagaranghan.com/', 
-    iosLiveUrl: 'https://sagaranghan.com/', 
+    androidLiveUrl: 'https://sagaranghan.com/',
+    iosLiveUrl: 'https://sagaranghan.com/',
     duration: '6 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -79,8 +79,8 @@ export const projectsData: Project[] = [
     imageHint: 'task list productivity',
     technologies: ['Flutter', 'Dart', 'SQLite'],
     projectUrl: '#',
-    androidLiveUrl: 'https://sagaranghan.com/', 
-    iosLiveUrl: 'https://sagaranghan.com/', 
+    androidLiveUrl: 'https://sagaranghan.com/',
+    iosLiveUrl: 'https://sagaranghan.com/',
     duration: '3 Months',
     role: 'Solo Developer',
     keyFeatures: [
@@ -133,24 +133,24 @@ export default function ProjectsSection() {
               <Link href={`/projects/${project.id}`} className="flex flex-col group flex-grow">
                 <div className="relative w-full h-60 md:h-72 flex overflow-hidden">
                   {/* Section 1 - Image 1 */}
-                  <div className="relative w-1/2 h-full">
+                  <div className="relative w-1/2 h-full bg-muted/30">
                     <Image
                       src={(project.images && project.images.length > 0) ? project.images[0] : 'https://placehold.co/300x400.png'}
                       alt={`${project.title} - Preview 1`}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain' }}
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 17vw"
                       data-ai-hint={project.imageHint || "app screenshot"}
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   {/* Section 2 - Image 2 */}
-                  <div className="relative w-1/2 h-full border-l-2 border-card">
+                  <div className="relative w-1/2 h-full border-l-2 border-card bg-muted/30">
                     <Image
                       src={(project.images && project.images.length > 1) ? project.images[1] : 'https://placehold.co/300x400.png'}
                       alt={`${project.title} - Preview 2`}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain' }}
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 17vw"
                       data-ai-hint={project.imageHint ? project.imageHint.split(" ")[0] + " detail" : "app detail"}
                       className="transition-transform duration-500 group-hover:scale-105"
