@@ -11,7 +11,7 @@ export const projectsData: Project[] = [
   {
     id: '1',
     title: '1Channel CRM',
-    description: 'This app helps businesses store and manage customer information in one place. It allows users to track leads, monitor sales, and improve customer interactions.\n\nThe app includes important features such as user management, where businesses can add team members and assign roles. It also has lead tracking, which helps businesses follow up with potential customers. Custom dashboards show sales performance in an easy-to-understand way, helping businesses make better decisions.\n\nAnother key feature is real-time notifications, which keep users updated on important activities like new leads, sales updates, or customer interactions. The goal of this app is to provide a simple and effective way for businesses to manage their customers and grow their sales.',
+    description: 'A comprehensive CRM and Loyalty application for managing customer interactions, sales pipelines, and reward programs. Built with a focus on scalability and real-time data synchronization.',
     imageUrl: 'https://play-lh.googleusercontent.com/3ToisVJsNVlEvmPEACTvmZvVswOf5AChrOc-TuKHiy6sYJWh-V9RLx5FYENNKKma5V4=w1052-h592-rw', // Card preview image
     images: [ // Gallery images for detail page
       'https://play-lh.googleusercontent.com/ArCPkw-6nSITNrB5qj61KDF48xyuBv7LkX5gjYt6cDGCMjz7Xsy2Htks2xJSfAXspxA=w1052-h592-rw', // Main display for detail
@@ -131,12 +131,12 @@ export default function ProjectsSection() {
           {displayedProjects.map((project) => (
             <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
               <Link href={`/projects/${project.id}`} className="flex flex-col group flex-grow">
-                <div className="relative w-full h-60 md:h-72 bg-muted/30"> {/* Added bg-muted/30 for letterbox area */}
+                <div className="relative w-full h-60 md:h-72"> {/* Removed bg-muted/30 */}
                   <Image
                     src={project.imageUrl}
                     alt={project.title}
                     fill
-                    style={{ objectFit: 'contain' }} // Changed from 'cover' to 'contain'
+                    style={{ objectFit: 'cover' }} // Changed from 'contain' to 'cover'
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     data-ai-hint={project.imageHint}
                     className="transition-transform duration-500 group-hover:scale-105"
