@@ -24,7 +24,7 @@ export default function Header() {
         
         <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
           {navItems.map((item) => (
-            <Button key={item.label} variant="ghost" asChild className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+            <Button key={item.label} variant="ghost" asChild className="text-sm font-medium text-muted-foreground transition-colors">
               <Link href={item.href}>{item.label}</Link>
             </Button>
           ))}
