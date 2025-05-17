@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, Rocket } from 'lucide-react';
 
 const navItems = [
@@ -44,10 +44,11 @@ export default function Header() {
               </SheetHeader>
               <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
                 {navItems.map((item) => (
-                  <Button key={item.label} variant="ghost" asChild className="w-full justify-start text-base">
-                    {/* TODO: Add SheetClose to each Link/Button to close the sheet on navigation for better UX */}
-                    <Link href={item.href}>{item.label}</Link>
-                  </Button>
+                  <SheetClose asChild key={item.label}>
+                    <Button variant="ghost" asChild className="w-full justify-start text-base">
+                      <Link href={item.href}>{item.label}</Link>
+                    </Button>
+                  </SheetClose>
                 ))}
               </nav>
             </SheetContent>
