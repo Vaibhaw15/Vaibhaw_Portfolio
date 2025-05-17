@@ -6,8 +6,9 @@ export interface Project {
   imageUrl: string;
   imageHint: string;
   technologies: string[];
-  projectUrl: string;
-  liveUrl?: string;
+  projectUrl: string; // Kept for data integrity, but no button for it now
+  androidLiveUrl?: string;
+  iosLiveUrl?: string;
 }
 
 export interface Testimonial {

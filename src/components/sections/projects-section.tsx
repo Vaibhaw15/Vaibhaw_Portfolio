@@ -1,10 +1,11 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Project } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const projectsData: Project[] = [
   {
@@ -14,8 +15,9 @@ const projectsData: Project[] = [
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'mobile app portfolio',
     technologies: ['Flutter', 'Dart', 'Firebase'],
-    projectUrl: 'https://github.com/sagaranghan/Portfolio',
-    liveUrl: 'https://sagaranghan.com/',
+    projectUrl: 'https://github.com/sagaranghan/Portfolio', // Kept for data
+    androidLiveUrl: 'https://sagaranghan.com/', // Example: using old liveUrl for Android
+    iosLiveUrl: '#', // Placeholder
   },
   {
     id: '2',
@@ -25,6 +27,8 @@ const projectsData: Project[] = [
     imageHint: 'grocery app interface',
     technologies: ['Flutter', 'Firebase', 'Stripe SDK'],
     projectUrl: 'https://github.com/sagaranghan/GrocaryApp',
+    androidLiveUrl: '#', // Placeholder
+    iosLiveUrl: '#', // Placeholder
   },
   {
     id: '3',
@@ -34,6 +38,8 @@ const projectsData: Project[] = [
     imageHint: 'task list productivity',
     technologies: ['Flutter', 'Dart', 'SQLite'],
     projectUrl: 'https://github.com/sagaranghan/TaskApp',
+    androidLiveUrl: '#', // Placeholder
+    iosLiveUrl: '#', // Placeholder
   },
    {
     id: '4',
@@ -43,6 +49,8 @@ const projectsData: Project[] = [
     imageHint: 'chat interface messages',
     technologies: ['Flutter', 'Firebase Firestore', 'Firebase Auth'],
     projectUrl: 'https://github.com/sagaranghan/ChatApp',
+    androidLiveUrl: '#', // Placeholder
+    iosLiveUrl: '#', // Placeholder
   },
 ];
 
@@ -60,8 +68,9 @@ export default function ProjectsSection() {
                 <Image
                   src={project.imageUrl}
                   alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   data-ai-hint={project.imageHint}
                   className="transition-transform duration-500 hover:scale-105"
                 />
@@ -80,15 +89,17 @@ export default function ProjectsSection() {
                 </div>
               </CardContent>
               <CardFooter className="flex flex-col sm:flex-row sm:justify-end gap-3 pt-4">
-                <Button variant="outline" asChild className="w-full sm:w-auto transition-transform hover:scale-105">
-                  <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" /> View Source
-                  </Link>
-                </Button>
-                {project.liveUrl && (
+                {project.androidLiveUrl && (
                   <Button asChild className="w-full sm:w-auto transition-transform hover:scale-105">
-                    <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                    <Link href={project.androidLiveUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" /> Android Live Demo
+                    </Link>
+                  </Button>
+                )}
+                {project.iosLiveUrl && (
+                  <Button asChild className="w-full sm:w-auto transition-transform hover:scale-105">
+                    <Link href={project.iosLiveUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" /> iOS Live Demo
                     </Link>
                   </Button>
                 )}
