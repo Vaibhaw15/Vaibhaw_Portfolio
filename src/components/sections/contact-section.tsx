@@ -5,16 +5,17 @@ import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { useState } from 'react'; // Added for isSubmitting state
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { SendHorizonal } from 'lucide-react'; // Changed icon
-import { db } from '@/firebase/config'; // Import Firestore instance
+import { SendHorizonal } from 'lucide-react';
+import { db } from '@/firebase/config';
 import { collection, addDoc } from 'firebase/firestore';
+import { useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -26,7 +27,9 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactSection() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // Renamed from isSending
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -37,20 +40,43 @@ export default function ContactSection() {
     },
   });
 
+  useEffect(() => {
+    const element = cardRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(element);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(element);
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
   const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
     setIsSubmitting(true);
     try {
-      // Add a new document with a generated ID to the "inquiries" collection
       await addDoc(collection(db, "inquiries"), {
         name: data.name,
         email: data.email,
         message: data.message,
-        submittedAt: new Date(), // Optional: add a timestamp
+        submittedAt: new Date(),
       });
 
       toast({
         title: 'Message Sent!',
-        description: "Thank you for your inquiry. We'll be in touch soon.",
+        description: "Thank you for your inquiry. I'll be in touch soon.",
       });
       form.reset();
     } catch (error) {
@@ -66,7 +92,14 @@ export default function ContactSection() {
   };
 
   return (
-    <Card id="contact" className="w-full shadow-xl rounded-lg">
+    <Card
+      id="contact"
+      ref={cardRef}
+      className={cn(
+        'w-full shadow-xl rounded-lg scroll-animated-item',
+        isVisible ? 'slide-from-left-active' : 'slide-from-left-initial'
+      )}
+    >
       <CardHeader className="text-center">
         <CardTitle className="text-3xl md:text-4xl text-primary">Message Me</CardTitle>
       </CardHeader>
