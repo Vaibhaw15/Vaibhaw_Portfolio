@@ -4,7 +4,8 @@ import Link from 'next/link';
 import type { Project } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-// Removed Button and ExternalLink as they are no longer used on the card directly
+import { Button } from '@/components/ui/button';
+import { ExternalLink } from 'lucide-react';
 
 export const projectsData: Project[] = [
   {
@@ -21,7 +22,7 @@ export const projectsData: Project[] = [
     imageHint: 'mobile app portfolio',
     technologies: ['Flutter', 'Dart', 'Firebase', 'AWS', 'Razor Pay'],
     projectUrl: '#', // General project link (e.g. GitHub repo if public)
-    androidLiveUrl: '#',
+    androidLiveUrl: 'https://sagaranghan.com/', // Example
     iosLiveUrl: '#',
     duration: '12 Months',
     role: 'Lead Developer',
@@ -123,10 +124,10 @@ export default function ProjectsSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
           Featured Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Changed to lg:grid-cols-3 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProjects.map((project) => (
             <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
-              <Link href={`/projects/${project.id}`} className="flex flex-col h-full group">
+              <Link href={`/projects/${project.id}`} className="flex flex-col group flex-grow">
                 <div className="relative w-full h-60 md:h-72">
                   <Image
                     src={project.imageUrl}
@@ -154,10 +155,28 @@ export default function ProjectsSection() {
                     {project.technologies.length > 3 && <Badge variant="outline">...</Badge>}
                   </div>
                 </CardContent>
-                <CardFooter className="mt-auto pt-4 border-t group-hover:bg-muted/50 transition-colors">
-                   <span className="text-sm text-primary font-medium">View Details →</span>
-                </CardFooter>
               </Link>
+              <CardFooter className="mt-auto pt-4 border-t flex flex-col items-start gap-3">
+                 <Link href={`/projects/${project.id}`} className="text-sm text-primary font-medium hover:underline">
+                   View Details →
+                 </Link>
+                 <div className="flex flex-wrap gap-2 w-full">
+                    {project.androidLiveUrl && project.androidLiveUrl !== '#' && (
+                        <Button size="sm" asChild className="flex-grow sm:flex-grow-0 transition-transform hover:scale-105">
+                        <Link href={project.androidLiveUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-1.5 h-4 w-4" /> Android Demo
+                        </Link>
+                        </Button>
+                    )}
+                    {project.iosLiveUrl && project.iosLiveUrl !== '#' && (
+                        <Button size="sm" variant="outline" asChild className="flex-grow sm:flex-grow-0 transition-transform hover:scale-105">
+                        <Link href={project.iosLiveUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-1.5 h-4 w-4" /> iOS Demo
+                        </Link>
+                        </Button>
+                    )}
+                 </div>
+              </CardFooter>
             </Card>
           ))}
         </div>
