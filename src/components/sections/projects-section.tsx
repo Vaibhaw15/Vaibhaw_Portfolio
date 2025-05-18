@@ -25,7 +25,7 @@ export const projectsData: Project[] = [
     technologies: ['Flutter', 'Dart', 'Firebase','BLoC','Crashlytics','Push Notification','SQLite'],
     projectUrl: '#', 
     androidLiveUrl: 'https://play.google.com/store/apps/details?id=com.onechannelcrm.assistive&hl=en_IN', 
-    iosLiveUrl: 'https://sagaranghan.com/',
+    iosLiveUrl: 'https://apps.apple.com/in/app/1channel-crm/id1637569093',
     duration: '18 Months',
     role: 'Flutter Developer',
     keyFeatures: [
