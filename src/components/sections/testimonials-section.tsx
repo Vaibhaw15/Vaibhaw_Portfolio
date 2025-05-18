@@ -23,7 +23,7 @@ const testimonialsData: Testimonial[] = [
     "authorName": "Ankit Kumar",
     "authorTitle": "Backend Developer",
     "authorImageUrl":"https://media.licdn.com/dms/image/v2/D5603AQGvxW3Vd5eXmw/profile-displayphoto-shrink_800_800/B56ZOmnhc9GoAg-/0/1733667199592?e=1752710400&v=beta&t=eLzEd1svGtwjDrrfPiQn2qKEvPb3Nx_LbupJUocWudg",
-    "authorImageHint": "Man smiling, professional portrait"
+    "authorImageHint": "Man smiling professional portrait"
   },
   {
     "id": "4",
@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-primary">
             Words From Colleagues
           </h2>
-          {/* Dash removed as per user request to only have it on Projects and Get In Touch */}
+          <div className="mt-3 h-1 w-20 bg-accent mx-auto rounded-full"></div>
         </div>
         <div ref={scrollContainerRef} className="relative w-full overflow-x-auto hide-scrollbar">
           <div ref={marqueeRef} className="flex animate-marquee whitespace-nowrap">
@@ -126,5 +126,3 @@ export default function TestimonialsSection() {
     </section>
   );
 }
-
-    
