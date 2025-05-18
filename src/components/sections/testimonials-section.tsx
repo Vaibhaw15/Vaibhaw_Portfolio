@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useRef } from 'react'; // Added useRef
+import { useRef } from 'react'; 
 import Image from 'next/image';
 import type { Testimonial } from '@/lib/types';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -45,7 +45,7 @@ const testimonialsData: Testimonial[] = [
 
 export default function TestimonialsSection() {
   const duplicatedTestimonials = [...testimonialsData, ...testimonialsData];
-  const marqueeRef = useRef<HTMLDivElement>(null); // Ref for the scrolling container
+  const marqueeRef = useRef<HTMLDivElement>(null); 
 
   const handleMouseEnterCard = () => {
     if (marqueeRef.current) {
@@ -70,17 +70,20 @@ export default function TestimonialsSection() {
         aria-hidden="true"
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-          Words From Colleagues
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">
+            Words From Colleagues
+          </h2>
+          <div className="mt-3 h-1 w-20 bg-accent mx-auto rounded-full"></div>
+        </div>
         <div className="relative w-full overflow-hidden">
-          <div ref={marqueeRef} className="flex animate-marquee whitespace-nowrap"> {/* Removed hover:animate-marquee-paused */}
+          <div ref={marqueeRef} className="flex animate-marquee whitespace-nowrap"> 
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
                 className="flex-none w-full max-w-sm sm:max-w-md md:w-[calc(100%/2.5)] lg:w-[calc(100%/3.3)] xl:w-[calc(100%/3.5)] mx-3"
-                onMouseEnter={handleMouseEnterCard} // Added
-                onMouseLeave={handleMouseLeaveCard} // Added
+                onMouseEnter={handleMouseEnterCard} 
+                onMouseLeave={handleMouseLeaveCard} 
               >
                 <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardHeader className="pb-4">
@@ -118,4 +121,3 @@ export default function TestimonialsSection() {
     </section>
   );
 }
-
