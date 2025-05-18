@@ -1,12 +1,12 @@
 
 "use client";
 
-import { useRef } from 'react'; 
-import Image from 'next/image';
+import { useRef } from 'react';
 import type { Testimonial } from '@/lib/types';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star, Layers, Target, Flame } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const testimonialsData: Testimonial[] = [
   {
@@ -45,7 +45,8 @@ const testimonialsData: Testimonial[] = [
 
 export default function TestimonialsSection() {
   const duplicatedTestimonials = [...testimonialsData, ...testimonialsData];
-  const marqueeRef = useRef<HTMLDivElement>(null); 
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnterCard = () => {
     if (marqueeRef.current) {
@@ -69,21 +70,25 @@ export default function TestimonialsSection() {
         className="hidden sm:block absolute bottom-1/3 right-1/4 h-40 w-40 text-accent/10 opacity-50 transform translate-x-1/2 translate-y-1/2 -rotate-[25deg] pointer-events-none z-0"
         aria-hidden="true"
       />
+       <Flame
+        className="hidden lg:block absolute top-1/2 -left-12 h-64 w-64 text-primary/10 opacity-50 transform -translate-y-1/2 rotate-[30deg] pointer-events-none z-0"
+        aria-hidden="true"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">
             Words From Colleagues
           </h2>
-          <div className="mt-3 h-1 w-20 bg-accent mx-auto rounded-full"></div>
+          {/* Dash removed as per user request to only have it on Projects and Get In Touch */}
         </div>
-        <div className="relative w-full overflow-hidden">
-          <div ref={marqueeRef} className="flex animate-marquee whitespace-nowrap"> 
+        <div ref={scrollContainerRef} className="relative w-full overflow-x-auto hide-scrollbar">
+          <div ref={marqueeRef} className="flex animate-marquee whitespace-nowrap">
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
                 className="flex-none w-full max-w-sm sm:max-w-md md:w-[calc(100%/2.5)] lg:w-[calc(100%/3.3)] xl:w-[calc(100%/3.5)] mx-3"
-                onMouseEnter={handleMouseEnterCard} 
-                onMouseLeave={handleMouseLeaveCard} 
+                onMouseEnter={handleMouseEnterCard}
+                onMouseLeave={handleMouseLeaveCard}
               >
                 <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardHeader className="pb-4">
@@ -121,3 +126,5 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+
+    
