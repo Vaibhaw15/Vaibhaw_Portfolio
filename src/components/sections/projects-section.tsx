@@ -5,7 +5,7 @@ import type { Project } from '@/lib/types';
 import { Layers, Target, Flame } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import AnimatedProjectCard from './AnimatedProjectCard'; // Import the new component
+import AnimatedProjectCard from './AnimatedProjectCard'; 
 
 export const projectsData: Project[] = [
   {
@@ -108,8 +108,8 @@ export const projectsData: Project[] = [
     imageHint: 'chat interface messages',
     technologies: ['Flutter', 'Firebase Firestore', 'Firebase Auth'],
     projectUrl: '#',
-    androidLiveUrl: '#', 
-    iosLiveUrl: '#', 
+    androidLiveUrl: 'https://sagaranghan.com/', 
+    iosLiveUrl: 'https://sagaranghan.com/', 
     duration: '4 Months',
     role: 'Flutter Developer',
     keyFeatures: [
@@ -139,7 +139,7 @@ export default function ProjectsSection() {
           if (entry.isIntersecting) {
             setTitleVisible(true);
           } else {
-            setTitleVisible(false); // Reset when out of view
+            setTitleVisible(false);
           }
         });
       },
@@ -170,15 +170,18 @@ export default function ProjectsSection() {
       />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2
-          ref={titleRef}
-          className={cn(
-            'text-3xl md:text-4xl font-bold text-center mb-12 text-primary scroll-animated-item',
-            isTitleVisible ? 'slide-from-left-active' : 'slide-from-left-initial'
-          )}
-        >
-          Featured Projects
-        </h2>
+        <div className="text-center mb-16">
+          <h2
+            ref={titleRef}
+            className={cn(
+              'text-3xl md:text-4xl font-bold text-primary scroll-animated-item',
+              isTitleVisible ? 'slide-from-left-active' : 'slide-from-left-initial'
+            )}
+          >
+            Featured Projects
+          </h2>
+          <div className="mt-3 h-1 w-20 bg-accent mx-auto rounded-full"></div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProjects.map((project, index) => (
             <AnimatedProjectCard key={project.id} project={project} index={index} />

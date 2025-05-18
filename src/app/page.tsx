@@ -33,6 +33,7 @@ export default function HomePage() {
             <p className="mt-4 text-lg text-muted-foreground">
               Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
             </p>
+             <div className="mt-3 h-1 w-20 bg-accent mx-auto rounded-full"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <ContactInformationSection />
