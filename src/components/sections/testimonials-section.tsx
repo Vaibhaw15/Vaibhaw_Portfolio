@@ -13,7 +13,7 @@ const testimonialsData: Testimonial[] = [
     "id": "1",
     "quote": "Vaibhaw's expertise in Flutter is exceptional. He delivered a robust, high-quality application that went beyond our expectations. His dedication, attention to detail, and problem-solving skills truly stand out.",
     "authorName": "Sudipta Samanta",
-    "authorTitle": "Technical Lead, 1Channel",
+    "authorTitle": "Senior Software Engineer, 1Channel",
     "authorImageUrl": "https://media.licdn.com/dms/image/v2/C5603AQH5Z_ksaiOB4g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1594881554401?e=1752710400&v=beta&t=ceD7zHMIBuRQy3gfwirOzE3e3WYq2e9r0N4CcmaiTVc",
     "authorImageHint": "Professional male portrait"
   },
