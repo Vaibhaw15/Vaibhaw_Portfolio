@@ -96,36 +96,49 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: '4',
-    title: 'Chat Application',
-    description: 'A real-time chat application enabling users to connect and communicate seamlessly. Features include one-on-one messaging and group chats.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    images: [
-      'https://placehold.co/800x600.png',
-      'https://placehold.co/400x300.png',
-      'https://placehold.co/400x300.png',
+    "id": "4",
+    "title": "MoneyWise",
+    "description": "MoneyWise is a personal finance management app that helps users track income and expenses, set monthly budgets, and gain insights through visual reports. Built using Flutter, Spring Boot, and Firebase, it ensures smooth performance, strong backend processing, and secure data handling.",
+    "imageUrl": "https://placehold.co/600x400.png",
+    "images": [
+      "https://play-lh.googleusercontent.com/38YOfg-YKPmmUyAQauhKz2A6SBubHvbeVVQqSktpkuN6Yzewjvh7TTqECzZRNl6pQJKX=w1052-h592-rw",
+      "https://play-lh.googleusercontent.com/HthsYVZNqIctpdh1mTtE09yhHKF11Rm6nt9uUBP8q7-vlnL4tND-pAW6HStUgX5LSw=w1052-h592-rw",
+      "https://play-lh.googleusercontent.com/cGSHxKSkrfd0s28P_f2WsoFlGK8NQM1BJ83fQ77wHLRUd78Ee-w4jDSTsuDZHy-oeNo=w1052-h592-rw",
+      "https://play-lh.googleusercontent.com/TmOjITvP09EnY-P_FzWshgltkxdW8VjF8bl_4qq89vNkIi-24LvtDTHPc9HdvnGc8eM=w1052-h592-rw",
+      "https://play-lh.googleusercontent.com/JOO3GqFsODwh9C2JpWywA6Tld9laii8YpUwnQ7Y6aqEreBIVg4U1heWUI6Uirv_NX3Y=w1052-h592-rw",
+      "https://play-lh.googleusercontent.com/DXuxZ-HkRvdIpKhCf2tpH5UQq2iVgNN-hWcI8VdV2fJEaO5uQIODzm_wyjDoK4roRPQ=w1052-h592-rw"
     ],
-    imageHint: 'chat interface messages',
-    technologies: ['Flutter', 'Firebase Firestore', 'Firebase Auth'],
-    projectUrl: '#',
-    androidLiveUrl: 'https://sagaranghan.com/', 
-    iosLiveUrl: 'https://sagaranghan.com/', 
-    duration: '4 Months',
-    role: 'Flutter Developer',
-    keyFeatures: [
-      'User Authentication (Mobile Number OTP)',
-      'Real-time One-on-One Messaging',
-      'Group Chat Functionality',
-      'Firebase Authentication',
-      'Firebase Firestore for Message Storage',
-      'User Presence Indication',
-      'Push Notifications for New Messages',
+    "imageHint": "Dashboard UI, expense charts, budget summaries",
+    "technologies": [
+      "Flutter",
+      "Spring Boot",
+      "Firebase Analytics",
+      "Firebase Crashlytics",
+      "Firebase Auth",
+      "Firebase Firestore",
+      "AWS"
     ],
-  },
+    "projectUrl": "#",
+    "androidLiveUrl": "https://play.google.com/store/apps/details?id=com.moneywise.moneywiseapp",
+    // "iosLiveUrl": "https://sagaranghan.com/",
+    "duration": "1 Months",
+    "role": "Flutter Developer",
+    "keyFeatures": [
+      "Track Income & Expenses with a clean, intuitive UI",
+      "Monthly Comparison Reports for income vs expenses",
+      "Set Budgets and get overspending alerts",
+      "Visual Charts: Pie, Bar, and Line graphs for financial insights",
+      "Firebase Authentication and Secure Login",
+      "Real-time data sync with Firebase Firestore",
+      "Analytics and Crash Reporting via Firebase",
+      "Spring Boot-powered secure backend APIs",
+      "Cloud hosting and backup on AWS"
+    ]
+  }  
 ];
 
 export default function ProjectsSection() {
-  const displayedProjects = projectsData.slice(0, 3);
+  const displayedProjects = projectsData.slice(0, 4);
   const [isTitleVisible, setTitleVisible] = useState(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
